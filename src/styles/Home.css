@@ -1,0 +1,4 @@
+.mainapp {
+  @apply w-full h-full;
+  @apply flex flex-row flex-nowrap;
+}

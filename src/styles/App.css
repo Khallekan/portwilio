@@ -1,0 +1,17 @@
+.app-wrapper {
+  @apply w-screen h-screen;
+  @apply overflow-hidden;
+  @apply font-roboto;
+}
+
+.lightTheme {
+  @apply bg-white text-textDark;
+}
+
+.dimTheme {
+  @apply bg-dim text-white;
+}
+
+.darkTheme {
+  @apply bg-black text-white;
+}

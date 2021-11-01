@@ -1,0 +1,7 @@
+.onboarding-wrapper {
+  @apply w-full h-full;
+  @apply flex items-center justify-center gap-2;
+  @apply text-lightBlue;
+  @apply text-5xl;
+  @apply cursor-default;
+}
