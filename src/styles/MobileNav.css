@@ -1,0 +1,16 @@
+.mobile-nav {
+  @apply w-full;
+  @apply fixed bottom-0;
+  @apply flex flex-row flex-nowrap items-center justify-between;
+  @apply border-t border-darkModeBorder;
+  @apply p-4;
+}
+
+.mobile-nav_item {
+  @apply rounded-full;
+  @apply p-2 hover:bg-darkModeBorder;
+  @apply text-2xl;
+}
+.mobile_nav_item-active {
+  @apply font-black;
+}

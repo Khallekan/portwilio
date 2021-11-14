@@ -1,25 +1,23 @@
 import { useEffect, useState } from "react";
+import { useRoutes } from "react-router-dom";
 import { useGlobalContext } from "../context";
-import { Redirect, useLocation, Route } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import Home from "../containers/Home";
-import Onboarding from "./Onboarding";
+import Onboarding from "../containers/Onboarding";
+import { routes } from "../utils/sidebar";
 import "../styles/App.css";
 
 const textValues = sessionStorage.getItem("reloadOnboarding") || {
   first: true,
   second: false,
   third: false,
-  fourth: false,
 };
 
 const App = () => {
+  let element = useRoutes(routes);
   const { theme } = useGlobalContext();
   const [bgTheme, setBgTheme] = useState(``);
   const [text, setText] = useState(textValues);
 
-  const { first, second, third, fourth } = text;
-  const location = useLocation();
+  const { first, second, third } = text;
 
   useEffect(() => {
     switch (theme) {
@@ -39,14 +37,11 @@ const App = () => {
 
   return (
     <div className={`app-wrapper ${bgTheme}`}>
-      <AnimatePresence>
-        {(first || second || third || fourth) && (
-          <Onboarding key={`onboarding`} text={text} setText={setText} />
-        )}
-        {!first && !second && !third && !fourth && (
-          <Route exact to={`/home`} component={Home} />
-        )}
-      </AnimatePresence>
+      {first || second || third ? (
+        <Onboarding text={text} setText={setText} />
+      ) : (
+        element
+      )}
     </div>
   );
 };

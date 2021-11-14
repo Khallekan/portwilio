@@ -1,31 +1,35 @@
 import React from "react";
-import { useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineTwitter } from "react-icons/ai";
 import SideBarItem from "./SideBarItem";
 import { items } from "../utils/sidebar";
 import "../styles/Sidebar.css";
+import { useGlobalContext } from "../context";
 const Sidebar = () => {
-  const { url } = useRouteMatch();
+  let { justIcons } = useGlobalContext();
+
   return (
     <aside className={`sidebar`}>
       <nav className={`sidebar_nav`}>
         <div className={`sidebar_logo_container`}>
-          <SideBarItem to={`${url}home`} className={`sidebar_logo`}>
+          <Link to={`/home`} className={`sidebar_logo`}>
             <AiOutlineTwitter />
-          </SideBarItem>
+          </Link>
         </div>
         <ul className={`sidebar_nav_ul`}>
-          {items.map(({ name, icon }, index) => {
+          {items.map(({ name, icon, activeIcon }, index) => {
             return (
               <SideBarItem
+                name={name}
+                icon={icon}
+                activeIcon={activeIcon}
                 key={index}
-                to={`${url}${name.toLowerCase()}`}
+                to={`/${name.toLowerCase()}`}
                 className={`sidebar_item`}
-                classNameChildren={`sidebar_item_children`}
-              >
-                <span className={`sidebar-item_icon`}>{icon}</span>{" "}
-                <span className={`sidebar-item_name`}>{name}</span>
-              </SideBarItem>
+                classNameChildren={`${
+                  justIcons ? `sidebar_item_children` : `sidebar_item_children2`
+                }`}
+              />
             );
           })}
         </ul>

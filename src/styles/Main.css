@@ -1,4 +1,4 @@
 .mainapp {
-  @apply w-full h-full;
+  @apply w-full h-full 2xl:max-w-screen-xl;
   @apply flex flex-row flex-nowrap;
 }

@@ -2,6 +2,7 @@
   @apply w-screen h-screen;
   @apply overflow-hidden;
   @apply font-roboto;
+  @apply flex items-center justify-center;
 }
 
 .lightTheme {

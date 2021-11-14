@@ -37,7 +37,7 @@ const secondVariant = {
     y: "-100vw",
   },
 };
-const thirdVariant = {
+const fourthVariant = {
   hidden: { y: "100vw" },
   visible: {
     y: 0,
@@ -50,7 +50,7 @@ const thirdVariant = {
     x: "-100vw",
   },
 };
-const fourthVariant = {
+const thirdVariant = {
   hidden: { opacity: 0, scale: 0 },
   visible: {
     opacity: 1,

@@ -1,9 +1,37 @@
-import { RiHome7Fill, RiHome7Line } from "react-icons/ri";
-import { BiHash, BiHomeCircle } from "react-icons/bi";
+import {
+  RiHome7Fill,
+  RiHome7Line,
+  RiSettings5Fill,
+  RiSettings5Line,
+} from "react-icons/ri";
+// import { BiHash } from "react-icons/bi";
+// import { BsHash } from "react-icons/bs";
+import { HiOutlineHashtag, HiHashtag } from "react-icons/hi";
+import Main from "../containers/Main";
+import Home from "../containers/Home";
+import Projects from "../containers/Projects";
+import Settings from "../containers/Settings";
 
 const items = [
-  { name: `Home`, icon: <BiHomeCircle />, activeIcon: <RiHome7Fill /> },
-  { name: `Projects`, icon: <BiHash /> },
+  { name: `Home`, icon: <RiHome7Line />, activeIcon: <RiHome7Fill /> },
+  { name: `Projects`, icon: <HiOutlineHashtag />, activeIcon: <HiHashtag /> },
+  {
+    name: `Settings`,
+    icon: <RiSettings5Line />,
+    activeIcon: <RiSettings5Fill />,
+  },
 ];
 
-export { items };
+const routes = [
+  {
+    path: "/",
+    element: <Main />,
+    children: [
+      { path: `/home`, element: <Home /> },
+      { path: `/projects`, element: <Projects /> },
+      { path: `/settings`, element: <Settings /> },
+    ],
+  },
+];
+
+export { items, routes };

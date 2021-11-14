@@ -5,7 +5,8 @@ const AppContext = React.createContext();
 
 const initialState = {
   theme: "DARK",
-  screenSize: ``,
+  justIcons: false,
+  mobileDevice: null,
 };
 
 const AppProvider = ({ children }) => {
