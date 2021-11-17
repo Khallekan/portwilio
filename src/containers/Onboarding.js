@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AiOutlineTwitter } from "react-icons/ai";
 import {
   firstVariant,
@@ -12,10 +12,11 @@ import "../styles/Onboarding.css";
 
 const Onboarding = ({ text, setText }) => {
   sessionStorage.setItem("reloadOnboarding", JSON.stringify(text));
+  let navigate = useNavigate();
   const { first, second, third } = text;
-  // const handleRedirectHome = useCallback(() => {
-  //   return navigate(`/home`);
-  // }, [navigate]);
+  const handleRedirectHome = useCallback(() => {
+    return navigate(`/home`);
+  }, [navigate]);
 
   useEffect(() => {
     if (text.first)
@@ -29,6 +30,7 @@ const Onboarding = ({ text, setText }) => {
     if (text.third)
       return setTimeout(() => {
         setText({ ...text, third: false });
+        handleRedirectHome();
       }, 3000);
   }, [text, setText]);
 

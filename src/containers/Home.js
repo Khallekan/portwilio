@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import { Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Socials from "../components/Socials";
 import Button from "../components/Button";
 const Home = () => {
   let profileImage = `https://res.cloudinary.com/duziwvlis/image/upload/v1637014374/IMG-20210403-WA0090_eeimaw.jpg`;
@@ -25,19 +26,23 @@ const Home = () => {
           </motion.div>
         </motion.header>
         <motion.div className={`mainapp_home_container`}>
-          <motion.p class={`mainapp_home_desc`}>
+          <motion.p className={`mainapp_home_desc`}>
             I am an entusiastic frontend developer with close to two (2) year's
             worth of experience building scalable and user-friendly web
             applications using various technologies. I have experience working
             on open source projects and can work in a group comfortably.
           </motion.p>
-          <Button>{`<Contact Me />`}</Button>
+          <motion.div className={`mainapp-home_socials`}></motion.div>
+          {/* <Button>{`<Contact Me /> `}</Button> */}
         </motion.div>
       </motion.section>
-      <motion.section className={`section2`}>
-        {/* <motion.div className={`home-img`}>
-          <motion.img src={profileImage} alt={`Lekan Isaac`} />
-        </motion.div> */}
+      <motion.section className={`section2 mainapp_home_container`}>
+        <Routes>
+          <Route
+            index
+            element={<Socials className={`mainapp_home-socials`} />}
+          />
+        </Routes>
       </motion.section>
     </motion.div>
   );

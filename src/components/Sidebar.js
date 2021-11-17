@@ -30,7 +30,7 @@ const Sidebar = () => {
   return (
     <aside className={`sidebar`}>
       <nav className={`sidebar_nav`}>
-        <Link to={`/`} className={`sidebar_logo_container ${logoTheme}`}>
+        <Link to={`/home`} className={`sidebar_logo_container ${logoTheme}`}>
           <AiOutlineTwitter />
         </Link>
         <ul className={`sidebar_nav_ul`}>

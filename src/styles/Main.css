@@ -1,6 +1,36 @@
+/* MAIN APP GENERAL STYLING */
 .mainapp {
   @apply w-full h-full 2xl:max-w-screen-xl;
   @apply flex flex-row flex-nowrap;
+}
+
+.mainapp-content_container {
+  @apply w-full;
+  @apply flex flex-row flex-nowrap;
+  @apply overflow-y-scroll;
+  @apply relative;
+}
+
+.section1,
+.section2 {
+  @apply h-full flex-shrink-0;
+  @apply overscroll-contain;
+}
+
+.section1 {
+  @apply w-full md:w-10/12 lg:w-8/12;
+}
+.section2 {
+  @apply hidden md:block;
+  @apply lg:w-4/12;
+  @apply border-l border-darkModeBorder;
+  @apply sticky top-0;
+  @apply overflow-y-scroll;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+.section2::-webkit-scrollbar {
+  display: none;
 }
 
 /* BUTTON STYLES */
@@ -37,35 +67,24 @@
   @apply bg-yellowTheme text-white;
 }
 
-.mainapp-content_container {
-  @apply w-full;
-  @apply flex flex-row flex-nowrap;
-  @apply overflow-y-scroll;
-  @apply relative;
+/* SOCIALS  STYLES*/
+.mainapp_home-socials {
+  @apply flex flex-row flex-wrap gap-2;
+  @apply pt-2;
 }
 
-.section1,
-.section2 {
-  @apply h-full flex-shrink-0;
-  @apply overscroll-contain;
+.social-container {
+  @apply text-xl;
+  @apply w-max;
+  @apply cursor-pointer rounded-full;
+  @apply p-2;
 }
-
-.section1 {
-  @apply w-full md:w-10/12 lg:w-8/12;
+.github-dark {
+  @apply hover:text-textDark hover:bg-white;
 }
-.section2 {
-  @apply hidden md:block;
-  @apply lg:w-4/12;
-  @apply border-l border-darkModeBorder;
-  @apply sticky top-0;
-  @apply overflow-y-scroll;
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
+.github-light {
+  @apply text-textDark hover:text-white hover:bg-textDark;
 }
-.section2::-webkit-scrollbar {
-  display: none;
-}
-
 /* Profile Main Styles */
 
 .profile-main {

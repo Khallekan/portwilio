@@ -12,6 +12,7 @@ import Home from "../containers/Home";
 import Projects from "../containers/Projects";
 import Settings from "../containers/Settings";
 import Profile from "../containers/Profile";
+import Socials from "../components/Socials";
 
 const items = [
   { name: `Profile`, icon: <RiHome7Line />, activeIcon: <RiHome7Fill /> },
@@ -28,7 +29,7 @@ const routes = [
     path: "/",
     element: <Main />,
     children: [
-      { index: true, element: <Home /> },
+      { path: "/home/*", element: <Home /> },
       { path: `/profile`, element: <Profile /> },
       { path: `/projects`, element: <Projects /> },
       { path: `/settings`, element: <Settings /> },
