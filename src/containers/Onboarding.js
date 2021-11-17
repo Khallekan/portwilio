@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { AiOutlineTwitter } from "react-icons/ai";
 import {
   firstVariant,
@@ -13,11 +13,9 @@ import "../styles/Onboarding.css";
 const Onboarding = ({ text, setText }) => {
   sessionStorage.setItem("reloadOnboarding", JSON.stringify(text));
   const { first, second, third } = text;
-  let navigate = useNavigate();
-
-  const handleRedirectHome = useCallback(() => {
-    return navigate(`/home`);
-  }, [navigate]);
+  // const handleRedirectHome = useCallback(() => {
+  //   return navigate(`/home`);
+  // }, [navigate]);
 
   useEffect(() => {
     if (text.first)
@@ -30,10 +28,9 @@ const Onboarding = ({ text, setText }) => {
       }, 3000);
     if (text.third)
       return setTimeout(() => {
-        handleRedirectHome();
         setText({ ...text, third: false });
       }, 3000);
-  }, [text, handleRedirectHome, setText]);
+  }, [text, setText]);
 
   return (
     <motion.div

@@ -7,6 +7,7 @@ const initialState = {
   theme: "DARK",
   justIcons: false,
   mobileDevice: null,
+  buttonTheme: "BLUE",
 };
 
 const AppProvider = ({ children }) => {

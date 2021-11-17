@@ -4,6 +4,7 @@
   @apply flex flex-row flex-nowrap items-center justify-between;
   @apply border-t border-darkModeBorder;
   @apply p-4;
+  @apply z-20;
 }
 
 .mobile-nav_item {

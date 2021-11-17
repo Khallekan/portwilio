@@ -15,39 +15,76 @@
   @apply flex flex-col gap-4;
 }
 
+.sidebar_item,
+.sidebar_logo_container {
+  @apply cursor-pointer;
+}
+
+/* LOGO STYLES */
+
+.sidebar_logo_light {
+  @apply text-lightBlue hover:bg-lightHover;
+}
+
+.sidebar_logo_dim {
+  @apply hover:bg-gray-800;
+}
+
+.sidebar_logo_dark {
+  @apply hover:bg-darkModeBorder;
+}
+
+.sidebar_logo_container {
+  @apply p-3;
+  @apply w-min;
+  @apply rounded-full;
+}
+
+/* SIDEBAR ITEM STYLES */
+
 .sidebar_item {
   @apply w-min;
   @apply rounded-full;
   @apply flex flex-row items-center gap-6;
-  @apply py-2;
-}
-
-.sidebar_item,
-.sidebar_logo_container {
-  @apply hover:bg-darkModeBorder cursor-pointer;
-}
-
-.sidebar_item_children {
-  @apply px-2;
-}
-
-.sidebar_item_children2 {
-  @apply pl-2 pr-8;
-}
-
-.sidebar_logo_container {
-  @apply p-2;
-  @apply w-min;
-  @apply rounded-full;
+  @apply py-3;
 }
 
 .sidebar-item_icon,
-.sidebar_logo {
+.sidebar_logo_container {
   @apply text-2xl sm:text-3xl md:text-4xl lg:text-3xl;
   @apply flex-shrink-0;
 }
 
-.sidebar-item_name {
+.sidebar_item_children {
+  @apply px-3;
+}
+
+.sidebar_item_children2 {
+  @apply pl-3 pr-8;
+}
+
+.sidebar-item_name,
+.sidebar-item_name_active {
   @apply hidden lg:block;
-  @apply font-normal lg:text-xl;
+  @apply lg:text-xl;
+}
+
+.sidebar-item_name {
+  @apply font-extralight;
+}
+
+.sidebar-item_name_active {
+  @apply font-normal;
+}
+
+.sidebar_item_light {
+  @apply hover:bg-gray-100;
+}
+
+.sidebar_item_dim {
+  @apply hover:bg-gray-800;
+}
+
+.sidebar_item_dark {
+  @apply hover:bg-darkModeBorder;
 }

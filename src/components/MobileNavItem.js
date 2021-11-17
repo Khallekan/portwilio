@@ -13,6 +13,7 @@ const MobileNavItem = ({
   let routeMatches = matchRoutes(routes, location);
   let isActive = routeMatches.some((match) => match.pathname === to);
   let classNames = isActive ? `${className} ${activeClassName}` : className;
+
   return (
     <Link to={to} className={classNames}>
       {isActive ? activeIcon : icon}

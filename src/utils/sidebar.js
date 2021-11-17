@@ -11,9 +11,10 @@ import Main from "../containers/Main";
 import Home from "../containers/Home";
 import Projects from "../containers/Projects";
 import Settings from "../containers/Settings";
+import Profile from "../containers/Profile";
 
 const items = [
-  { name: `Home`, icon: <RiHome7Line />, activeIcon: <RiHome7Fill /> },
+  { name: `Profile`, icon: <RiHome7Line />, activeIcon: <RiHome7Fill /> },
   { name: `Projects`, icon: <HiOutlineHashtag />, activeIcon: <HiHashtag /> },
   {
     name: `Settings`,
@@ -27,7 +28,8 @@ const routes = [
     path: "/",
     element: <Main />,
     children: [
-      { path: `/home`, element: <Home /> },
+      { index: true, element: <Home /> },
+      { path: `/profile`, element: <Profile /> },
       { path: `/projects`, element: <Projects /> },
       { path: `/settings`, element: <Settings /> },
     ],

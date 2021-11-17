@@ -7,7 +7,7 @@ import {
 import { IoSearch } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 const items = [
-  { name: `Home`, activeIcon: <RiHome7Fill />, icon: <RiHome7Line /> },
+  { name: `Profile`, activeIcon: <RiHome7Fill />, icon: <RiHome7Line /> },
   { name: `Projects`, activeIcon: <IoSearch />, icon: <IoIosSearch /> },
   {
     name: `Settings`,
