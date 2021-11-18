@@ -8,6 +8,7 @@ const initialState = {
   justIcons: false,
   mobileDevice: null,
   buttonTheme: "BLUE",
+  isContactModalOpen: false,
 };
 
 const AppProvider = ({ children }) => {

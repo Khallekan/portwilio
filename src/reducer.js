@@ -6,6 +6,8 @@ const reducer = (state, action) => {
       return { ...state, mobileDevice: action.payload };
     case "HANDLE_BUTTON_THEME":
       return { ...state, buttonTheme: action.payload };
+    case `HANDLE_MODAL`:
+      return { ...state, isContactModalOpen: action.payload };
     default:
       return state;
   }

@@ -10,7 +10,7 @@ import {
 } from "../utils/onboardingVariants";
 import "../styles/Onboarding.css";
 
-const Onboarding = ({ text, setText }) => {
+const Onboarding = ({ setText, text }) => {
   sessionStorage.setItem("reloadOnboarding", JSON.stringify(text));
   let navigate = useNavigate();
   const { first, second, third } = text;
@@ -32,7 +32,7 @@ const Onboarding = ({ text, setText }) => {
         setText({ ...text, third: false });
         handleRedirectHome();
       }, 3000);
-  }, [text, setText]);
+  }, [text, setText, handleRedirectHome]);
 
   return (
     <motion.div

@@ -2,6 +2,7 @@
 .mainapp {
   @apply w-full h-full 2xl:max-w-screen-xl;
   @apply flex flex-row flex-nowrap;
+  @apply relative;
 }
 
 .mainapp-content_container {
@@ -68,9 +69,16 @@
 }
 
 /* SOCIALS  STYLES*/
+.socials {
+  @apply flex flex-col gap-5 pt-4 items-center;
+}
+
 .mainapp_home-socials {
-  @apply flex flex-row flex-wrap gap-2;
-  @apply pt-2;
+  @apply flex md:flex-col lg:flex-row gap-2;
+}
+
+.socials_button {
+  @apply px-4 py-2 w-max;
 }
 
 .social-container {
@@ -78,6 +86,21 @@
   @apply w-max;
   @apply cursor-pointer rounded-full;
   @apply p-2;
+  @apply relative;
+  @apply flex flex-row items-center gap-3;
+  @apply capitalize;
+}
+.social-tooltip {
+  @apply absolute;
+  @apply top-full left-1/2 z-30;
+  transform: translateX(-50%);
+  @apply mt-1 p-1;
+  @apply w-max;
+  @apply text-center;
+  @apply text-xs;
+  @apply text-white;
+  @apply bg-darkModeBorder opacity-100 rounded-md;
+  @apply capitalize;
 }
 .github-dark {
   @apply hover:text-textDark hover:bg-white;
@@ -85,6 +108,34 @@
 .github-light {
   @apply text-textDark hover:text-white hover:bg-textDark;
 }
+
+.hoverTheme-lightBlue {
+  @apply hover:text-white hover:bg-lightBlue;
+}
+.hoverTheme-pink {
+  @apply hover:text-white hover:bg-pinkTheme;
+}
+.hoverTheme-purple {
+  @apply hover:text-white hover:bg-purpleTheme;
+}
+.hoverTheme-orange {
+  @apply hover:text-white hover:bg-orangeTheme;
+}
+.hoverTheme-green {
+  @apply hover:text-white hover:bg-greenTheme;
+}
+.hoverTheme-yellow {
+  @apply hover:text-white hover:bg-yellowTheme;
+}
+
+.twitter {
+  @apply hover:text-white hover:bg-lightBlue;
+}
+
+.linkedin {
+  @apply hover:text-white hover:bg-linkedIn;
+}
+
 /* Profile Main Styles */
 
 .profile-main {
@@ -98,17 +149,17 @@
 }
 
 .mainapp_home_container {
-  @apply px-4;
+  @apply px-4 pb-20 md:pb-6;
 }
 .mainapp_home-header {
-  @apply flex flex-row gap-2;
-  @apply pt-4;
+  @apply flex flex-col md:flex-row gap-2 items-center md:items-end;
+  @apply pt-4 pb-0;
 }
 
 .mainapp_home-header_img {
-  border-radius: 0% 100% 0% 100% / 0% 100% 88% 100%;
+  border-radius: 30% 100% 30% 100% / 100% 100% 85% 100%;
   overflow: hidden;
-  @apply w-1/6 lg:w-2/6;
+  @apply w-8/12 md:w-4/12 lg:w-2/6;
 }
 .mainapp_home-header_intro {
   @apply w-5/6 lg:w-4/6;
@@ -117,11 +168,11 @@
 }
 
 .mainapp_home-header_intro_greet {
-  @apply text-4xl font-extralight;
+  @apply text-2xl md:text-3xl lg:text-4xl font-extralight;
 }
 
 .mainapp_home-header_intro_name {
-  @apply text-3xl font-extralight;
+  @apply text-xl sm:text-2xl md:text-2xl lg:text-3xl font-extralight;
 }
 
 .mainapp_home-header_intro_name_text {
@@ -130,4 +181,42 @@
 
 .mainapp_home_desc {
   @apply text-lg;
+}
+
+.mainapp_home-contact {
+  @apply w-max;
+  @apply pt-4 mx-auto md:mx-0;
+}
+
+.mainapp_home-contact-btn {
+  @apply px-4 py-3;
+}
+
+/* CONTACT MODAL */
+
+.contact-modal {
+  @apply absolute inset-0;
+  @apply w-full h-full;
+  @apply z-50;
+  @apply bg-black bg-opacity-50;
+  @apply flex items-center justify-center;
+}
+
+.contact-modal_container {
+  @apply shadow-2xl;
+  @apply w-10/12 md:w-9/12 lg:w-6/12;
+  @apply rounded-md;
+  @apply p-4 py-6;
+  @apply text-center;
+}
+
+.contact-modal_prompt {
+  @apply text-2xl;
+}
+
+.contact-modal_close {
+  @apply w-max;
+  @apply text-2xl;
+  @apply ml-auto;
+  @apply cursor-pointer;
 }

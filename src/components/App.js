@@ -5,7 +5,7 @@ import Onboarding from "../containers/Onboarding";
 import { routes } from "../utils/sidebar";
 import "../styles/App.css";
 
-const textValues = sessionStorage.getItem("reloadOnboarding") || {
+const textValues = JSON.parse(sessionStorage.getItem("reloadOnboarding")) || {
   first: true,
   second: false,
   third: false,
@@ -16,6 +16,7 @@ const App = () => {
   const { theme } = useGlobalContext();
   const [bgTheme, setBgTheme] = useState(``);
   const [text, setText] = useState(textValues);
+  sessionStorage.setItem(`reloadOnboarding`, JSON.stringify(text));
 
   const { first, second, third } = text;
 
@@ -38,7 +39,7 @@ const App = () => {
   return (
     <div className={`app-wrapper ${bgTheme}`}>
       {first || second || third ? (
-        <Onboarding text={text} setText={setText} />
+        <Onboarding setText={setText} text={text} />
       ) : (
         element
       )}

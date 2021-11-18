@@ -1,50 +1,23 @@
 import { useCallback, useState, useEffect } from "react";
-import {
-  BsTwitter,
-  BsGithub,
-  BsLinkedin,
-  BsTelephoneFill,
-} from "react-icons/bs";
-import { IoMailSharp } from "react-icons/io5";
+import { socialLinks } from "../utils/sidebar";
+import { MdOutlineComputer } from "react-icons/md";
 import { useGlobalContext } from "../context";
+import useWindowsDimension from "../utils/hooks";
+import Button from "./Button";
 
-const socialLinks = [
-  {
-    app: `github`,
-    classNames: `social-container`,
-    element: <BsGithub />,
-    url: `https://github.com/Khallekan`,
-  },
-  {
-    app: `email`,
-    classNames: `social-container mail`,
-    element: <IoMailSharp />,
-    url: `mailto:okeolalekanisaac@gmail.com`,
-  },
-  {
-    app: `phone`,
-    classNames: `social-container telephone`,
-    element: <BsTelephoneFill />,
-    url: `tel:+2348179459363`,
-  },
-  {
-    app: `twitter`,
-    classNames: `social-container twitter`,
-    element: <BsTwitter />,
-    url: `https://twitter.com/Khallekan`,
-  },
-  {
-    app: `linkedin`,
-    classNames: `social-container linkedin`,
-    element: <BsLinkedin />,
-    url: `http://www.linkedin.com/in/oke-olalekan-100`,
-  },
-];
-
-const Socials = ({ className }) => {
-  const { theme, buttonTheme } = useGlobalContext();
-  const [socials] = useState(socialLinks);
+const Socials = ({
+  className,
+  isButtonVisible = true,
+  isTextVisible = false,
+}) => {
+  let { width } = useWindowsDimension();
+  const { theme, buttonTheme, dispatch } = useGlobalContext();
+  const [socials, setSocials] = useState(socialLinks);
   const [hoverTheme, setHoverTheme] = useState(``);
+
+  const handleModalOpen = () => {
+    return dispatch({ type: "HANDLE_MODAL", payload: true });
+  };
 
   const handleGithubTheme = useCallback(() => {
     switch (theme) {
@@ -57,7 +30,7 @@ const Socials = ({ className }) => {
       default:
         return `github-light`;
     }
-  }, [theme, socials]);
+  }, [theme]);
 
   const handleButtonTheme = useCallback(() => {
     switch (buttonTheme) {
@@ -78,29 +51,85 @@ const Socials = ({ className }) => {
     }
   }, [buttonTheme, setHoverTheme]);
 
+  const handleMouseOver = useCallback(
+    (app) => {
+      setSocials((prevState) => {
+        return prevState.map((social) => {
+          if (social.app === app) {
+            return {
+              ...social,
+              isTooltipVisible: true,
+            };
+          }
+          return social;
+        });
+      });
+    },
+    [setSocials]
+  );
+
+  const handleMouseOut = useCallback(
+    (app) => {
+      setSocials((prevState) => {
+        return prevState.map((social) => {
+          if (social.app === app) {
+            return {
+              ...social,
+              isTooltipVisible: false,
+            };
+          }
+          return social;
+        });
+      });
+    },
+    [setSocials]
+  );
+
   useEffect(() => {
     handleButtonTheme();
   }, [buttonTheme, handleButtonTheme]);
 
   return (
-    <div className={className}>
-      {socials.map(({ url, element, classNames, app }, index) => {
-        let newClassname;
-        if (app === `github`) {
-          newClassname = `${classNames} ${handleGithubTheme()}`;
-        }
-        if (app !== `github` && app !== `linkedin` && app !== `twitter`) {
-          newClassname = `${classNames} ${hoverTheme}`;
-        }
-        if (app === `twitter` || app === `linkedin`) {
-          newClassname = `${classNames}`;
-        }
-        return (
-          <a href={url} className={newClassname} key={index}>
-            {element}
-          </a>
-        );
-      })}
+    <div className={`socials`}>
+      {isButtonVisible && (
+        <Button className={`socials_button`} onClick={handleModalOpen}>
+          {width > 1030 ? `<Contact Me />` : <MdOutlineComputer />}
+        </Button>
+      )}
+      <div className={`${className}`}>
+        {socials.map(
+          ({ url, element, classNames, app, isTooltipVisible }, index) => {
+            let newClassname;
+            if (app === `github`) {
+              newClassname = `${classNames} ${handleGithubTheme()}`;
+            }
+            if (app !== `github` && app !== `linkedin` && app !== `twitter`) {
+              newClassname = `${classNames} ${hoverTheme}`;
+            }
+            if (app === `twitter` || app === `linkedin`) {
+              newClassname = `${classNames}`;
+            }
+            return (
+              <a
+                href={url}
+                target={`_blank`}
+                className={newClassname}
+                key={index}
+                onMouseOver={() => handleMouseOver(app)}
+                onFocus={() => handleMouseOver(app)}
+                onMouseOut={() => handleMouseOut(app)}
+                onBlur={() => handleMouseOut(app)}
+              >
+                {isTextVisible && <span className={`social-name`}>{app}</span>}{" "}
+                {element}
+                {isTooltipVisible && (
+                  <span className={`social-tooltip`}>{app}</span>
+                )}
+              </a>
+            );
+          }
+        )}
+      </div>
     </div>
   );
 };

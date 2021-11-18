@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import MobileNav from "../components/MobileNav";
+import ContactModal from "../components/ContactModal";
 import { useGlobalContext } from "../context";
 import useWindowDimensions from "../utils/hooks";
 import "../styles/Main.css";
 
 const Main = () => {
-  const { dispatch, mobileDevice } = useGlobalContext();
+  const { dispatch, mobileDevice, isContactModalOpen } = useGlobalContext();
   let { width } = useWindowDimensions();
 
   useEffect(() => {
@@ -26,6 +27,7 @@ const Main = () => {
 
   return (
     <section className={`mainapp`}>
+      {isContactModalOpen && <ContactModal />}
       {mobileDevice ? <MobileNav /> : <Sidebar />}
       <Outlet />
     </section>

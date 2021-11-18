@@ -18,6 +18,7 @@ module.exports = {
         textDark: "#0F1419",
         darkModeBorder: "#2F3336",
         lightHover: `#D4ECFC`,
+        linkedIn: `#0A66C2`,
       },
     },
   },
