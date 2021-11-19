@@ -1,7 +1,6 @@
 // RiHome7Fill,
 // RiHome7Line,
 import { RiSettings5Fill, RiSettings5Line } from "react-icons/ri";
-// import { BiHash } from "react-icons/bi";
 import {
   BsFillPersonFill,
   BsPerson,
@@ -9,14 +8,23 @@ import {
   BsGithub,
   BsLinkedin,
   BsTelephoneFill,
+  BsBriefcase,
+  BsBriefcaseFill,
 } from "react-icons/bs";
-import { HiOutlineHashtag, HiHashtag } from "react-icons/hi";
+import {
+  HiOutlineHashtag,
+  HiHashtag,
+  HiPuzzle,
+  HiOutlinePuzzle,
+} from "react-icons/hi";
 import { IoMailSharp } from "react-icons/io5";
 import Main from "../containers/Main";
 import Home from "../containers/Home";
 import Projects from "../containers/Projects";
 import Settings from "../containers/Settings";
 import Profile from "../containers/Profile";
+import ProfileSkills from "../components/ProfileSkills";
+import ProfileExperience from "../components/ProfileExperience";
 
 const items = [
   { name: `Profile`, icon: <BsPerson />, activeIcon: <BsFillPersonFill /> },
@@ -35,7 +43,14 @@ const routes = [
     children: [
       { index: true, element: <Home /> },
       { path: "/home/*", element: <Home /> },
-      { path: `/profile`, element: <Profile /> },
+      {
+        path: `/profile/*`,
+        element: <Profile />,
+        children: [
+          { index: true, element: <ProfileSkills /> },
+          { path: `experience`, element: <ProfileExperience /> },
+        ],
+      },
       { path: `/projects`, element: <Projects /> },
       { path: `/settings`, element: <Settings /> },
     ],
@@ -79,5 +94,19 @@ const socialLinks = [
     isTooltipVisible: false,
   },
 ];
+const profileNav = [
+  {
+    activeIcon: <HiPuzzle />,
+    icon: <HiOutlinePuzzle />,
+    title: `Skills`,
+    to: `/profile`,
+  },
+  {
+    activeIcon: <BsBriefcaseFill />,
+    icon: <BsBriefcase />,
+    title: `Experience`,
+    to: `/profile/experience`,
+  },
+];
 
-export { items, routes, socialLinks };
+export { items, routes, socialLinks, profileNav };

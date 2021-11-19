@@ -36,6 +36,16 @@
 
 /* BUTTON STYLES */
 
+.button-dark {
+  @apply hover:bg-black hover:text-white hover:border-white;
+}
+.button-dim {
+  @apply hover:bg-dim hover:text-white hover:border-white;
+}
+.button-light {
+  @apply hover:bg-white hover:text-black hover:border-black;
+}
+
 .button-yellow,
 .button-lightBlue,
 .button-pink,
@@ -44,6 +54,7 @@
 .button-green {
   @apply text-white;
   @apply rounded-full;
+  @apply border border-transparent;
 }
 
 .button-lightBlue {
@@ -60,12 +71,22 @@
 .button-orange {
   @apply bg-orangeTheme;
 }
-.button-greenTheme {
+.button-green {
   @apply bg-greenTheme;
 }
 
 .button-yellow {
   @apply bg-yellowTheme text-white;
+}
+
+/* BACK BUTTON */
+
+.backButton {
+  @apply w-max;
+  height: max-content;
+  @apply p-3;
+  @apply rounded-full;
+  @apply cursor-pointer;
 }
 
 /* SOCIALS  STYLES*/
@@ -78,7 +99,7 @@
 }
 
 .socials_button {
-  @apply px-4 py-2 w-max;
+  @apply px-4 py-2 w-max font-semibold;
 }
 
 .social-container {
@@ -92,7 +113,7 @@
 }
 .social-tooltip {
   @apply absolute;
-  @apply top-full left-1/2 z-30;
+  @apply top-full left-1/2 z-30 transform -translate-x-1/2;
   transform: translateX(-50%);
   @apply mt-1 p-1;
   @apply w-max;
@@ -140,6 +161,127 @@
 
 .profile-main {
   @apply w-full h-full;
+  /* @apply mb-44 md:mb-0; */
+}
+.profile-main_nav {
+  @apply flex flex-row gap-3 items-center;
+  @apply border-b border-darkModeBorder;
+}
+.profile-main_container {
+  @apply px-4 pt-2 pb-2;
+}
+.profile-main_nav-text {
+  @apply flex flex-col flex-nowrap;
+}
+.profile-main_nav-text-name {
+  @apply font-semibold;
+  @apply text-xl;
+}
+.profile-main_nav-text-role {
+  @apply font-light;
+  @apply text-sm;
+}
+
+.profile-main-content_header-images {
+  @apply relative;
+  @apply sm:h-auto md:h-36 lg:h-52;
+}
+.profile-main-content_header-images_header {
+  @apply w-full h-full;
+  @apply overflow-hidden;
+  @apply cursor-pointer;
+}
+.profile-main-content_header-images_header img {
+  @apply h-full w-full;
+  @apply object-cover;
+}
+
+.profile-main-content_header-images_profile {
+  @apply absolute;
+  @apply bottom-0 left-4 transform translate-y-3/4 md:translate-y-2/3  lg:translate-y-1/2;
+  @apply w-24 sm:w-28 md:w-28 lg:w-28;
+  @apply border-4;
+  @apply rounded-full;
+  @apply overflow-hidden;
+  @apply cursor-pointer;
+}
+.profile-main-content_header-images_profile img {
+  @apply shadow-md;
+}
+.profile-main-content_header-main {
+  @apply px-4 pt-12 md:pt-12 lg:pt-6 xl:pt-10 2xl:pt-12;
+  @apply flex flex-col;
+}
+.profile-main-content_button {
+  @apply py-2 px-4 self-end;
+  @apply font-semibold;
+}
+
+.profile-main-content_header-info {
+  @apply flex flex-col flex-nowrap;
+}
+
+.profile-main-content_header-info_name {
+  @apply text-lg font-extrabold;
+}
+
+.profile-main-content_header-info_nickname {
+  @apply text-sm font-light;
+}
+.profile-main-content_header-info_desc {
+  @apply pt-4 leading-5;
+}
+.profile-main-content_header-info_location {
+  @apply pt-4 flex flex-row gap-1 items-end;
+  @apply text-xs;
+}
+.profile-main-content_header-info_location svg {
+  @apply text-xl;
+}
+
+/* PROFILE NAV STYLES */
+
+.profile-nav {
+  @apply grid grid-cols-2 justify-items-stretch pt-6;
+}
+
+.profile_nav_light {
+  @apply hover:bg-gray-200;
+}
+
+.profile_nav_dim {
+  @apply hover:bg-gray-800;
+}
+
+.profile_nav_dark {
+  @apply hover:bg-darkModeBorder;
+}
+
+.profile-nav-item {
+  @apply flex items-center justify-center;
+}
+
+.profile-nav-item_main {
+  @apply py-4;
+  @apply relative;
+  @apply flex flex-row items-center gap-2;
+  @apply text-lg;
+}
+
+.profile-nav-item_active {
+  @apply absolute inset-x-0 bottom-0;
+  @apply h-1;
+  @apply rounded-full;
+  @apply w-full;
+}
+/* THEMED BORDER STYLES */
+
+.border-dark {
+  @apply border-black;
+}
+
+.border-light {
+  @apply border-white;
 }
 
 /* Home styles */
@@ -158,7 +300,7 @@
 
 .mainapp_home-header_img {
   border-radius: 30% 100% 30% 100% / 100% 100% 85% 100%;
-  overflow: hidden;
+  @apply overflow-hidden;
   @apply w-8/12 md:w-4/12 lg:w-2/6;
 }
 .mainapp_home-header_intro {

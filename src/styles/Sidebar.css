@@ -70,7 +70,7 @@
 }
 
 .sidebar-item_name {
-  @apply font-extralight;
+  @apply font-light;
 }
 
 .sidebar-item_name_active {

@@ -4,4 +4,5 @@
   @apply text-lightBlue;
   @apply text-2xl md:text-3xl lg:text-5xl;
   @apply cursor-default;
+  @apply leading-loose;
 }

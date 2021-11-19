@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import ProfileMain from "../components/ProfileMain";
-// import useWindowDimensions from "../utils/hooks";
+import Socials from "../components/Socials";
 import { useGlobalContext } from "../context";
 
 const Profile = () => {
@@ -14,7 +14,9 @@ const Profile = () => {
       <section className='section1'>
         <ProfileMain />
       </section>
-      <section className='section2'>something2</section>
+      <section className='section2 mainapp_home_container'>
+        <Socials className={`mainapp_home-socials`} />
+      </section>
     </div>
   );
 };
