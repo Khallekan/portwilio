@@ -70,9 +70,9 @@ const ProfileMain = () => {
               </span>
             </p>
             <p className={`profile-main-content_header-info_desc`}>
-              Graduate of the University of Lagos, a student of Biochemistry but
-              I am an aspiring fullstack developer. I am open to in-person or
-              remote internships or jobs.
+              A Biochemist by formal education. An aspiring fullstack developer
+              with current focus on the frontend aspect. I am open to in-person
+              or remote internships or jobs.
             </p>
             <p className={`profile-main-content_header-info_location`}>
               <MdLocationPin /> Lagos, Nigeria
