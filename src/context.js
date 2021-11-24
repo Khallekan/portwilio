@@ -3,8 +3,8 @@ import reducer from "./reducer";
 
 const AppContext = React.createContext();
 
-const initialState = {
-  theme: "DARK",
+const initialState = JSON.parse(localStorage.getItem("settings")) || {
+  theme: "LIGHT",
   justIcons: false,
   mobileDevice: null,
   buttonTheme: "BLUE",
@@ -13,6 +13,7 @@ const initialState = {
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  localStorage.setItem(`settings`, JSON.stringify(state));
   return (
     <AppContext.Provider value={{ ...state, dispatch }}>
       {children}
