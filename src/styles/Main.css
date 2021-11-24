@@ -76,7 +76,7 @@
 }
 
 .button-yellow {
-  @apply bg-yellowTheme text-white;
+  @apply bg-yellowTheme;
 }
 
 /* BACK BUTTON */
@@ -288,7 +288,7 @@
   @apply cursor-default;
   @apply flex flex-col md:flex-row items-center justify-center gap-2;
   @apply rounded-md;
-  @apply text-white text-base md:text-lg;
+  @apply text-white text-base;
   @apply shadow;
   @apply font-semibold;
 }
@@ -454,4 +454,103 @@
   @apply text-2xl;
   @apply ml-auto;
   @apply cursor-pointer;
+}
+
+/* SETTINGS STYLES */
+
+.settings-main {
+  @apply px-4;
+}
+
+.settings-group {
+  @apply pt-6;
+  @apply flex flex-col gap-4;
+}
+
+.settings-group_header {
+  @apply text-xl font-semibold;
+}
+
+.settings-buttonTheme {
+  @apply relative;
+  @apply box-content w-7 h-7 md:w-12 md:h-12 lg:w-12 lg:h-12;
+  @apply rounded-full;
+  @apply border border-transparent;
+  @apply text-base md:text-xl lg:text-2xl;
+  @apply flex items-center justify-center;
+  @apply flex-shrink-0;
+}
+
+.settings-bgTheme {
+  @apply w-max sm:w-20 md:w-28 py-4 rounded-md px-4;
+  @apply text-xs md:text-base;
+  @apply border-4 border-transparent;
+  @apply flex flex-row flex-nowrap justify-center gap-1 items-center;
+  @apply font-semibold;
+  /* @apply py-4 px-6; */
+}
+
+.settingsButton-lightBlue,
+.settingsButton-lightBlue .settingsChecked {
+  @apply border-lightBlue;
+  @apply text-lightBlue;
+}
+.settingsButton-yellow {
+  @apply border-yellowTheme;
+}
+.settingsButton-pink {
+  @apply border-pinkTheme;
+}
+.settingsButton-purple {
+  @apply border-purpleTheme;
+}
+.settingsButton-orange {
+  @apply border-orangeTheme;
+}
+.settingsButton-green {
+  @apply border-greenTheme;
+}
+
+.settings-buttonTheme_container {
+  @apply flex flex-row justify-evenly gap-4 px-6;
+}
+
+.settings-dimbtn {
+  @apply bg-dim text-white;
+}
+
+.settings-darkbtn {
+  @apply bg-black text-white;
+}
+
+.settings-lightbtn {
+  @apply bg-white text-black;
+}
+
+.settings-btn-active-lightBlue {
+  @apply text-lightBlue;
+}
+
+.settings-btn-active-yellow {
+  @apply text-yellowTheme;
+}
+
+.settings-btn-active-pink {
+  @apply text-pinkTheme;
+}
+
+.settings-btn-active-purple {
+  @apply text-purpleTheme;
+}
+
+.settings-btn-active-orange {
+  @apply text-orangeTheme;
+}
+
+.settings-btn-active-green {
+  @apply text-greenTheme;
+}
+
+.settings-btn-inactive {
+  @apply text-lightGray;
 }

@@ -4,6 +4,8 @@ const reducer = (state, action) => {
       return { ...state, justIcons: action.payload };
     case `HANDLE_MOBILE`:
       return { ...state, mobileDevice: action.payload };
+    case `HANDLE_BACKGROUND`:
+      return { ...state, theme: action.payload };
     case "HANDLE_BUTTON_THEME":
       return { ...state, buttonTheme: action.payload };
     case `HANDLE_MODAL`:

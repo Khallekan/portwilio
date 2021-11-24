@@ -32,6 +32,7 @@ module.exports = {
         react: `#61DAFB`,
         tailwind: `#46ABB3`,
         bootstrap: `#553D7B`,
+        lightGray: `#B9CAD3`,
       },
     },
   },
