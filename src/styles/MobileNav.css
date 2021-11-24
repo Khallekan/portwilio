@@ -9,7 +9,7 @@
 
 .mobile-nav_item {
   @apply rounded-full;
-  @apply p-2 hover:bg-darkModeBorder;
+  @apply p-2;
   @apply text-2xl;
 }
 .mobile_nav_item-active {
