@@ -456,6 +456,23 @@
   @apply cursor-pointer;
 }
 
+/* PROJECT STYLES */
+
+.project-container {
+  @apply px-4 pt-4 pb-6;
+  @apply grid grid-cols-1 gap-2;
+}
+
+.project-card {
+  @apply relative;
+}
+
+.project-card_links {
+  @apply w-full;
+  @apply absolute top-1/2 left-0;
+  @apply flex justify-evenly;
+}
+
 /* SETTINGS STYLES */
 
 .settings-main {
