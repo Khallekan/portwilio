@@ -2,7 +2,7 @@
   @apply flex-shrink-0;
   @apply flex flex-col flex-nowrap justify-start items-end;
   @apply w-max md:w-1/6 lg:w-1/5 h-full;
-  @apply border-r border-darkModeBorder;
+  @apply border-r;
   @apply px-6 py-4;
 }
 

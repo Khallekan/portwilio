@@ -5,11 +5,12 @@ import Button from "./Button";
 import { Outlet } from "react-router-dom";
 import { MdLocationPin } from "react-icons/md";
 import ProfileNav from "./ProfileNav";
+import { useThemeBorder } from "../utils/hooks";
 
 const ProfileMain = () => {
   const { theme, dispatch } = useGlobalContext();
   const [borderColor, setBorderColor] = useState(``);
-
+  const { border } = useThemeBorder();
   useEffect(() => {
     switch (theme) {
       case `DARK`:
@@ -29,7 +30,7 @@ const ProfileMain = () => {
 
   return (
     <div className='profile-main'>
-      <div className={`profile-main_nav profile-main_container`}>
+      <div className={`profile-main_nav profile-main_container ${border}`}>
         <BackButton />
         <div className={`profile-main_nav-text`}>
           <p className={`profile-main_nav-text-name`}>Oke Olalekan Isaac</p>

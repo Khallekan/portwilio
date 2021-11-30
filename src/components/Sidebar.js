@@ -5,10 +5,12 @@ import SideBarItem from "./SideBarItem";
 import { items } from "../utils/sidebar";
 import "../styles/Sidebar.css";
 import { useGlobalContext } from "../context";
+import { useThemeBorder } from "../utils/hooks";
+
 const Sidebar = () => {
-  let { justIcons } = useGlobalContext();
-  const { theme } = useGlobalContext();
+  let { justIcons, theme } = useGlobalContext();
   const [logoTheme, setLogoTheme] = useState(``);
+  const { border } = useThemeBorder();
 
   const getTheme = useCallback(() => {
     switch (theme) {
@@ -28,7 +30,7 @@ const Sidebar = () => {
   }, [getTheme]);
 
   return (
-    <aside className={`sidebar`}>
+    <aside className={`sidebar ${border}`}>
       <nav className={`sidebar_nav`}>
         <Link to={`/home`} className={`sidebar_logo_container ${logoTheme}`}>
           <AiOutlineTwitter />

@@ -109,4 +109,92 @@ const profileNav = [
   },
 ];
 
-export { items, routes, socialLinks, profileNav };
+const projects = [
+  {
+    img: `https://res.cloudinary.com/duziwvlis/image/upload/v1638032291/Screenshot_2021-11-27_175414_kjsoyf.jpg`,
+    title: `Country Finder`,
+    github: `https://github.com/Khallekan/rest-countries-api-with-color-switcher`,
+    description: `A simple app that allows you to search for countries by name, capital, region, subregion, population, area, currency, language, flag, and more.`,
+    link: `https://country-finder-phi.vercel.app`,
+    tech: [`React`, `Tailwind`, `Countries Rest Api`, `SCSS`],
+  },
+  {
+    img: `https://res.cloudinary.com/duziwvlis/image/upload/v1638032288/Screenshot_2021-11-23_181841_hqfban.jpg`,
+    title: `BarterTrade`,
+    github: `https://github.com/Khallekan/BarterTrade`,
+    description: `Open source project that connects users to trade items without the use of money`,
+    link: `https://zuri-bartertrade.vercel.app`,
+    tech: [`HTML`, `CSS`, `Tailwind`, `Node`, `JavaScript`],
+  },
+  {
+    img: `https://res.cloudinary.com/duziwvlis/image/upload/v1638032287/Screenshot_2021-11-23_180544_xlycqf.jpg`,
+    title: `Shortly`,
+    github: `https://github.com/Khallekan/Shortner`,
+    description: `A simple URL shortener that allows you to shorten your links and share them with others.`,
+    link: `http://shortly-link-shortner.vercel.app`,
+    tech: [`HTML`, `SCSS`, `JavaScript`, `Shrtcode API`],
+  },
+];
+
+const experience = [
+  {
+    organization: `Developer Students Club.`,
+    position: `Intern`,
+    duration: `Sept 2020 - Dec 2020`,
+    activities: [
+      `Built frontend applications by converting UI/UX designs to fully scalable, interactive and responsive websites.`,
+    ],
+  },
+  {
+    organization: `Zuri Training.`,
+    position: `Intern`,
+    duration: `March 2021 - July 2021`,
+    activities: [
+      `Built a full stack web application in a team using HTML, CSS, JavaScript`,
+      `Collaborated with various developers and designers to build and deploy a fully functional application.`,
+    ],
+  },
+  {
+    organization: `HNG Internship 8 - Operated by Zuri.`,
+    position: `Intern`,
+    duration: `August 2021 - September 2021`,
+    activities: [
+      `Contributed to an open source project to facilitate the communication between a large amount of users.`,
+    ],
+  },
+  {
+    organization: `Freelance`,
+    position: `Frontend Developer`,
+    duration: `April 2020 - Present`,
+    activities: [
+      `Implemented websites, frontend applications and landing pages from concept using React.js, SCSS, bootstrap.`,
+      `Collaborated with various developers and designers to build and deploy responsive and interactive websites with a mobile first approach.`,
+    ],
+  },
+];
+
+const settingsItems = {
+  buttonThemeItems: [
+    { className: `settings-buttonTheme button-lightBlue`, name: `BLUE` },
+    { className: `settings-buttonTheme button-yellow`, name: `YELLOW` },
+    { className: `settings-buttonTheme button-pink`, name: `PINK` },
+    { className: `settings-buttonTheme button-purple`, name: `PURPLE` },
+    { className: `settings-buttonTheme button-orange`, name: `ORANGE` },
+    { className: `settings-buttonTheme button-green`, name: `GREEN` },
+  ],
+  bgThemeItems: [
+    { className: `settings-bgTheme settings-lightbtn`, name: `LIGHT` },
+    { className: `settings-bgTheme settings-dimbtn`, name: `DIM` },
+    { className: `settings-bgTheme settings-darkbtn`, name: `DARK` },
+  ],
+};
+
+export {
+  items,
+  routes,
+  socialLinks,
+  profileNav,
+  projects,
+  experience,
+  settingsItems,
+};

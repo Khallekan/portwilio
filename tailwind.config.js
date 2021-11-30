@@ -33,6 +33,8 @@ module.exports = {
         tailwind: `#46ABB3`,
         bootstrap: `#553D7B`,
         lightGray: `#B9CAD3`,
+        lightBorder: `#EFF3F4`,
+        dimBorder: `#38444D`,
       },
     },
   },

@@ -2,22 +2,8 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useGlobalContext } from "../context";
 
 const Button = ({ className, children, ...rest }) => {
-  let { buttonTheme, theme } = useGlobalContext();
+  let { buttonTheme } = useGlobalContext();
   const [colorTheme, setColorTheme] = useState(``);
-  const [hoverTheme, setHoverTheme] = useState(``);
-
-  const handleHoverTheme = useCallback(() => {
-    switch (theme) {
-      case `DARK`:
-        return setHoverTheme(`button-dark`);
-      case `DIM`:
-        return setHoverTheme(`button-dim`);
-      case `LIGHT`:
-        return setHoverTheme(`button-light`);
-      default:
-        return setHoverTheme(`button-light`);
-    }
-  }, [theme]);
 
   const handleButtonTheme = useCallback(() => {
     switch (buttonTheme) {
@@ -42,12 +28,8 @@ const Button = ({ className, children, ...rest }) => {
     handleButtonTheme();
   }, [buttonTheme, handleButtonTheme]);
 
-  useEffect(() => {
-    handleHoverTheme();
-  }, [theme, handleHoverTheme]);
-
   return (
-    <button className={`${colorTheme} ${hoverTheme} ${className}`} {...rest}>
+    <button className={`${colorTheme} ${className}`} {...rest}>
       {children}
     </button>
   );

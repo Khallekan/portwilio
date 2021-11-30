@@ -3,12 +3,15 @@ import { motion } from "framer-motion";
 import { Routes, Route } from "react-router-dom";
 import Socials from "../components/Socials";
 import Button from "../components/Button";
-import useWindowDimensions from "../utils/hooks";
+import useWindowDimensions, { useThemeBorder } from "../utils/hooks";
 import { useGlobalContext } from "../context";
 const Home = () => {
   let profileImage = `https://res.cloudinary.com/duziwvlis/image/upload/v1637014374/IMG-20210403-WA0090_eeimaw.jpg`;
   let { width } = useWindowDimensions();
   const { dispatch } = useGlobalContext();
+  const { border } = useThemeBorder();
+
+  console.log(border);
 
   useEffect(() => {
     dispatch({ type: `HANDLE_MODAL`, payload: false });
@@ -60,7 +63,7 @@ const Home = () => {
           </motion.div>
         </motion.div>
       </motion.section>
-      <motion.section className={`section2 mainapp_home_container`}>
+      <motion.section className={`section2 mainapp_home_container ${border}`}>
         <Routes>
           <Route
             index

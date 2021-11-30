@@ -3,26 +3,14 @@ import { useGlobalContext } from "../context";
 import Socials from "../components/Socials";
 import { AiOutlineCheck } from "react-icons/ai";
 import { IoMdRadioButtonOff, IoMdRadioButtonOn } from "react-icons/io";
-
-const settingsItems = {
-  buttonThemeItems: [
-    { className: `settings-buttonTheme button-lightBlue`, name: `BLUE` },
-    { className: `settings-buttonTheme button-yellow`, name: `YELLOW` },
-    { className: `settings-buttonTheme button-pink`, name: `PINK` },
-    { className: `settings-buttonTheme button-purple`, name: `PURPLE` },
-    { className: `settings-buttonTheme button-orange`, name: `ORANGE` },
-    { className: `settings-buttonTheme button-green`, name: `GREEN` },
-  ],
-  bgThemeItems: [
-    { className: `settings-bgTheme settings-lightbtn`, name: `LIGHT` },
-    { className: `settings-bgTheme settings-dimbtn`, name: `DIM` },
-    { className: `settings-bgTheme settings-darkbtn`, name: `DARK` },
-  ],
-};
+import { settingsItems } from "../utils/sidebar";
+import { useThemeBorder } from "../utils/hooks";
 
 const Settings = () => {
   const { dispatch, buttonTheme, theme } = useGlobalContext();
   const [borderColor, setBorderColor] = useState({ border: ``, text: `` });
+  const { border } = useThemeBorder();
+
   useEffect(() => {
     switch (buttonTheme) {
       case `BLUE`:
@@ -123,7 +111,7 @@ const Settings = () => {
           </div>
         </div>
       </section>
-      <section className='section2 mainapp_home_container'>
+      <section className={`section2 mainapp_home_container ${border}`}>
         <Socials className={`mainapp_home-socials`} />
       </section>
     </div>
