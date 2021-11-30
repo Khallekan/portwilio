@@ -11,8 +11,6 @@ const Home = () => {
   const { dispatch } = useGlobalContext();
   const { border } = useThemeBorder();
 
-  console.log(border);
-
   useEffect(() => {
     dispatch({ type: `HANDLE_MODAL`, payload: false });
   }, [dispatch]);
