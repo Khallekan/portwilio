@@ -53,11 +53,7 @@ const ProjectCard = (project) => {
       <div className='project-card_info'>
         <h3 className='project-card_title'>{project.title}</h3>
         <p className='project-card_description'>{project.description}</p>
-        <div className='project-card_tech'>
-          {project.tech.map((tech, index) => {
-            return <span key={index}>{tech}</span>;
-          })}
-        </div>
+        <div className='project-card_tech'>{project.tech.join(", ")}</div>
 
         <div className='project-card_links'>
           <a
@@ -74,7 +70,7 @@ const ProjectCard = (project) => {
             rel='noopener noreferrer'
             className={`${colorTheme} ${hoverTheme} project-card_link`}
           >
-            Live
+            Visit
           </a>
         </div>
       </div>

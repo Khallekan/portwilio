@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useGlobalContext } from "../context";
 import Socials from "../components/Socials";
+import BackButton from "../components/BackButton";
 import { AiOutlineCheck } from "react-icons/ai";
 import { IoMdRadioButtonOff, IoMdRadioButtonOn } from "react-icons/io";
 import { settingsItems } from "../utils/sidebar";
@@ -58,6 +59,13 @@ const Settings = () => {
   return (
     <div className={`mainapp-content_container`}>
       <section className='section1 settings-main'>
+        <div className={`profile-main_nav profile-main_container ${border}`}>
+          <BackButton />
+          <div className={`profile-main_nav-text`}>
+            <p className={`profile-main_nav-text-name`}>Oke Olalekan Isaac</p>
+            <p className={`profile-main_nav-text-role`}>Frontend Developer</p>
+          </div>
+        </div>
         <div className={`settings-group`}>
           <h2 className={`settings-group_header`}>Color</h2>
           <div className={`settings-buttonTheme_container`}>
@@ -72,7 +80,6 @@ const Settings = () => {
                     dispatch({ type: `HANDLE_BUTTON_THEME`, payload: name })
                   }
                 >
-                  {" "}
                   {isActive && <AiOutlineCheck />}
                 </button>
               );

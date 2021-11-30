@@ -124,7 +124,7 @@ const projects = [
     github: `https://github.com/Khallekan/BarterTrade`,
     description: `An open source project that connects users to trade items without the use of money`,
     link: `https://zuri-bartertrade.vercel.app`,
-    tech: [`HTML`, `CSS`, `Tailwind`, `Node`, `JavaScript`],
+    tech: [`HTML`, `CSS`, `Tailwind`, `NodeJS`, `JavaScript`],
   },
   {
     img: `https://res.cloudinary.com/duziwvlis/image/upload/v1638032287/Screenshot_2021-11-23_180544_xlycqf.jpg`,
