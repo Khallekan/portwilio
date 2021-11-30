@@ -3,10 +3,12 @@ import MobileNavItem from "./MobileNavItem";
 import "../styles/MobileNav.css";
 import { useGlobalContext } from "../context";
 import { useState, useEffect } from "react";
+import { useThemeBorder } from "../utils/hooks";
 
 const MobileNav = () => {
   let { theme } = useGlobalContext();
   const [bgTheme, setBgTheme] = useState(``);
+  const { border } = useThemeBorder();
 
   useEffect(() => {
     switch (theme) {
@@ -25,7 +27,7 @@ const MobileNav = () => {
   }, [theme]);
 
   return (
-    <div className={`mobile-nav ${bgTheme}`}>
+    <div className={`mobile-nav ${border} ${bgTheme}`}>
       {items.map(({ name, ...rest }, index) => {
         return (
           <MobileNavItem

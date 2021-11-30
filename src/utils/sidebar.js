@@ -122,7 +122,7 @@ const projects = [
     img: `https://res.cloudinary.com/duziwvlis/image/upload/v1638032288/Screenshot_2021-11-23_181841_hqfban.jpg`,
     title: `BarterTrade`,
     github: `https://github.com/Khallekan/BarterTrade`,
-    description: `Open source project that connects users to trade items without the use of money`,
+    description: `An open source project that connects users to trade items without the use of money`,
     link: `https://zuri-bartertrade.vercel.app`,
     tech: [`HTML`, `CSS`, `Tailwind`, `Node`, `JavaScript`],
   },
@@ -133,6 +133,22 @@ const projects = [
     description: `A simple URL shortener that allows you to shorten your links and share them with others.`,
     link: `http://shortly-link-shortner.vercel.app`,
     tech: [`HTML`, `SCSS`, `JavaScript`, `Shrtcode API`],
+  },
+  {
+    img: `https://res.cloudinary.com/duziwvlis/image/upload/v1638032292/Screenshot_2021-11-23_181643_ensi12.jpg`,
+    title: `Loopstudios`,
+    github: `https://github.com/Khallekan/Loopstudios`,
+    description: `A simple landing page for a VR company. Fully responsive and mobile friendly.`,
+    link: `https://challenge12-khallekan.vercel.app`,
+    tech: [`HTML`, `SCSS`, `JavaScript`],
+  },
+  {
+    img: `https://res.cloudinary.com/duziwvlis/image/upload/v1638032291/Screenshot_2021-11-23_181417_b9oafl.jpg`,
+    title: `Easybank Landing Page`,
+    github: `https://github.com/Khallekan/easybank-landing`,
+    description: `A simple landing page for a bank. Fully responsive and mobile friendly.`,
+    link: `http://challenge14-git-master.khallekan.vercel.app/`,
+    tech: [`HTML`, `SCSS`, `JavaScript`],
   },
 ];
 

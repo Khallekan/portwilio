@@ -2,7 +2,7 @@
   @apply w-full;
   @apply fixed bottom-0;
   @apply flex flex-row flex-nowrap items-center justify-between;
-  @apply border-t border-darkModeBorder;
+  @apply border-t;
   @apply p-4;
   @apply z-20;
 }
