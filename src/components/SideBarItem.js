@@ -1,5 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Link, matchRoutes, useLocation } from "react-router-dom";
+import {
+  Link,
+  matchRoutes,
+  useLocation,
+  useResolvedPath,
+} from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { routes } from "../utils/sidebar";
 const SideBarItem = ({
@@ -9,12 +14,23 @@ const SideBarItem = ({
   icon,
   name,
   activeIcon,
+  exact,
 }) => {
   const [hoverItem, setHover] = useState(`initialState`);
-  let location = useLocation();
-  let routeMatches = matchRoutes(routes, location);
   let { justIcons, theme } = useGlobalContext();
-  let isActive = routeMatches.some((match) => match.pathname === to);
+  let resolvedPath = useResolvedPath(to);
+  let location = useLocation();
+  let routeMatches = matchRoutes(routes, resolvedPath);
+
+  let isActive;
+  if (exact) {
+    isActive = location.pathname === resolvedPath.pathname;
+  }
+  if (!exact) {
+    isActive = routeMatches.some(
+      (match) => match.pathname === resolvedPath.pathname
+    );
+  }
 
   const handleHoverItem = useCallback(() => {
     switch (theme) {

@@ -8,7 +8,7 @@ const onboardingVariant = {
     },
   },
   exit: {
-    y: "-100vw",
+    x: "-100vw",
   },
 };
 const firstVariant = {
@@ -21,11 +21,11 @@ const firstVariant = {
     },
   },
   exit: {
-    y: "100vw",
+    y: "100vh",
   },
 };
 const secondVariant = {
-  hidden: { y: "-100vw" },
+  hidden: { y: "-100vh" },
   visible: {
     y: 0,
     transition: {
@@ -34,20 +34,7 @@ const secondVariant = {
     },
   },
   exit: {
-    y: "-100vw",
-  },
-};
-const fourthVariant = {
-  hidden: { y: "100vw" },
-  visible: {
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 50,
-    },
-  },
-  exit: {
-    x: "-100vw",
+    y: "-100vh",
   },
 };
 const thirdVariant = {
@@ -61,7 +48,20 @@ const thirdVariant = {
     },
   },
   exit: {
-    y: "-100vw",
+    x: "-100vw",
+  },
+};
+const fourthVariant = {
+  hidden: { y: "100vh" },
+  visible: {
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 50,
+    },
+  },
+  exit: {
+    x: "-100vw",
   },
 };
 

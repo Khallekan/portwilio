@@ -4,6 +4,7 @@
   @apply w-max md:w-1/6 lg:w-1/5 h-full;
   @apply border-r;
   @apply px-6 py-4;
+  @apply relative z-30;
 }
 
 .sidebar_nav {

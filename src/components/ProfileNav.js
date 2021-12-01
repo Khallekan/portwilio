@@ -10,7 +10,7 @@ const ProfileNav = () => {
   return (
     <div className={`profile-nav ${border}`}>
       {navItems.map((navItem, index) => {
-        return <ProfileNavItem {...navItem} key={index} />;
+        return <ProfileNavItem {...navItem} key={index} exact={true} />;
       })}
     </div>
   );

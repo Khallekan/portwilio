@@ -1,13 +1,27 @@
 import { useState, useCallback, useEffect } from "react";
-import { Link, matchRoutes, useLocation } from "react-router-dom";
+import {
+  Link,
+  matchRoutes,
+  useLocation,
+  useResolvedPath,
+} from "react-router-dom";
 import { routes } from "../utils/sidebar";
 import { useGlobalContext } from "../context";
-const ProfileNavItem = ({ activeIcon, icon, to, title }) => {
+const ProfileNavItem = ({ activeIcon, icon, to, title, exact }) => {
   const [hoverItem, setHover] = useState(``);
   const [colorTheme, setColorTheme] = useState(``);
   let location = useLocation();
-  let routeMatches = matchRoutes(routes, location);
-  let isActive = routeMatches.some((match) => match.pathname === to);
+  let resolvedPath = useResolvedPath(to);
+  let routeMatches = matchRoutes(routes, resolvedPath);
+  let isActive;
+  if (exact) {
+    isActive = location.pathname === resolvedPath.pathname;
+  }
+  if (!exact) {
+    isActive = routeMatches.some(
+      (match) => match.pathname === resolvedPath.pathname
+    );
+  }
   let { theme, buttonTheme } = useGlobalContext();
 
   const handleHoverItem = useCallback(() => {

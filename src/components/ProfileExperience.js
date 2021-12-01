@@ -1,11 +1,18 @@
 import React from "react";
 import { experience } from "../utils/sidebar";
 import { useThemeBorder } from "../utils/hooks";
-
+import { motion } from "framer-motion";
+import { routesVariantDesktop } from "../utils/variants";
 const ProfileExperience = () => {
   const { border } = useThemeBorder();
   return (
-    <div className={`profile-experience`}>
+    <motion.div
+      className={`profile-experience`}
+      variants={routesVariantDesktop}
+      animate='visible'
+      initial='hidden'
+      exit='exit'
+    >
       {experience.map(
         ({ organization, position, duration, activities }, index) => {
           return (
@@ -32,7 +39,7 @@ const ProfileExperience = () => {
           );
         }
       )}
-    </div>
+    </motion.div>
   );
 };
 

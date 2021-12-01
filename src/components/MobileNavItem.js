@@ -1,5 +1,10 @@
 import React from "react";
-import { Link, useLocation, matchRoutes } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  matchRoutes,
+  useResolvedPath,
+} from "react-router-dom";
 import { routes } from "../utils/sidebar";
 
 const MobileNavItem = ({
@@ -8,10 +13,21 @@ const MobileNavItem = ({
   activeIcon,
   className,
   activeClassName,
+  exact,
 }) => {
   let location = useLocation();
-  let routeMatches = matchRoutes(routes, location);
-  let isActive = routeMatches.some((match) => match.pathname === to);
+  let resolvedPath = useResolvedPath(to);
+  let routeMatches = matchRoutes(routes, resolvedPath);
+
+  let isActive;
+  if (exact) {
+    isActive = location.pathname === resolvedPath.pathname;
+  }
+  if (!exact) {
+    isActive = routeMatches.some(
+      (match) => match.pathname === resolvedPath.pathname
+    );
+  }
   let classNames = isActive ? `${className} ${activeClassName}` : className;
 
   return (

@@ -1,6 +1,6 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { AiOutlineTwitter } from "react-icons/ai";
 import {
   firstVariant,
@@ -12,11 +12,11 @@ import "../styles/Onboarding.css";
 
 const Onboarding = ({ setText, text }) => {
   sessionStorage.setItem("reloadOnboarding", JSON.stringify(text));
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const { first, second, third } = text;
-  const handleRedirectHome = useCallback(() => {
-    return navigate(`/home`);
-  }, [navigate]);
+  // const handleRedirectHome = useCallback(() => {
+  //   return navigate(`/home`);
+  // }, [navigate]);
 
   useEffect(() => {
     if (text.first)
@@ -30,36 +30,49 @@ const Onboarding = ({ setText, text }) => {
     if (text.third)
       return setTimeout(() => {
         setText({ ...text, third: false });
-        handleRedirectHome();
       }, 3000);
-  }, [text, setText, handleRedirectHome]);
+  }, [text, setText]);
 
   return (
     <motion.div
       variants={onboardingVariant}
-      initial={"hidden"}
-      animate={"visible"}
-      exit={"exit"}
+      initial='hidden'
+      animate='visible'
+      exit='exit'
       className={`onboarding-wrapper`}
     >
       <AnimatePresence exitBeforeEnter>
         {first && (
           <motion.span
-            key={`first`}
+            key='first'
             variants={firstVariant}
-            className={`text-center`}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
           >
             Hello there! <br />
             Welcome to Khallekan's Portfolio!
           </motion.span>
         )}
         {second && (
-          <motion.span key={`third`} variants={secondVariant}>
+          <motion.span
+            key='second'
+            variants={secondVariant}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
+          >
             Modelled after...
           </motion.span>
         )}
         {third && (
-          <motion.span key={`fourth`} variants={thirdVariant}>
+          <motion.span
+            key='third'
+            variants={thirdVariant}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
+          >
             <AiOutlineTwitter className={`inline text-7xl`} />
           </motion.span>
         )}

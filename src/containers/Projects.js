@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useGlobalContext } from "../context";
 import Socials from "../components/Socials";
+import { motion } from "framer-motion";
+import { routesVariantDesktop } from "../utils/variants";
 import ProjectCard from "../components/ProjectCard";
 import BackButton from "../components/BackButton";
 import { projects } from "../utils/sidebar";
@@ -38,7 +40,13 @@ const Projects = () => {
     dispatch({ type: `HANDLE_MODAL`, payload: false });
   }, [dispatch]);
   return (
-    <div className={`mainapp-content_container`}>
+    <motion.div
+      className={`mainapp-content_container`}
+      variants={routesVariantDesktop}
+      animate='visible'
+      initial='hidden'
+      exit='exit'
+    >
       <section className={`section1 project-container`}>
         <div className={`profile-main_nav profile-main_container ${border}`}>
           <BackButton />
@@ -56,7 +64,7 @@ const Projects = () => {
       <section className={`section2 mainapp_home_container ${border}`}>
         <Socials className={`mainapp_home-socials`} />
       </section>
-    </div>
+    </motion.div>
   );
 };
 

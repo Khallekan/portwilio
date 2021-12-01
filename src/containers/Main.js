@@ -3,8 +3,11 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import MobileNav from "../components/MobileNav";
 import ContactModal from "../components/ContactModal";
+import { motion, AnimatePresence } from "framer-motion";
 import { useGlobalContext } from "../context";
 import useWindowDimensions from "../utils/hooks";
+import { mainAppVariant } from "../utils/variants";
+
 import "../styles/Main.css";
 
 const Main = () => {
@@ -26,11 +29,19 @@ const Main = () => {
   }, [width, dispatch]);
 
   return (
-    <section className={`mainapp`}>
+    <motion.section
+      className={`mainapp`}
+      variants={mainAppVariant}
+      exit='exit'
+      animate='visible'
+      initial='hidden'
+    >
       {isContactModalOpen && <ContactModal />}
       {mobileDevice ? <MobileNav /> : <Sidebar />}
-      <Outlet />
-    </section>
+      <AnimatePresence exitBeforeEnter>
+        <Outlet />
+      </AnimatePresence>
+    </motion.section>
   );
 };
 

@@ -6,6 +6,7 @@ import { Outlet } from "react-router-dom";
 import { MdLocationPin } from "react-icons/md";
 import ProfileNav from "./ProfileNav";
 import { useThemeBorder } from "../utils/hooks";
+import { AnimatePresence } from "framer-motion";
 
 const ProfileMain = () => {
   const { theme, dispatch } = useGlobalContext();
@@ -80,7 +81,9 @@ const ProfileMain = () => {
             </p>
           </div>
           <ProfileNav />
-          <Outlet />
+          <AnimatePresence>
+            <Outlet />
+          </AnimatePresence>
         </div>
       </div>
     </div>

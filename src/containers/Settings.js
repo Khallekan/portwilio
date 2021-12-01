@@ -6,7 +6,8 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { IoMdRadioButtonOff, IoMdRadioButtonOn } from "react-icons/io";
 import { settingsItems } from "../utils/sidebar";
 import { useThemeBorder } from "../utils/hooks";
-
+import { motion } from "framer-motion";
+import { routesVariantDesktop } from "../utils/variants";
 const Settings = () => {
   const { dispatch, buttonTheme, theme } = useGlobalContext();
   const [borderColor, setBorderColor] = useState({ border: ``, text: `` });
@@ -57,7 +58,13 @@ const Settings = () => {
     dispatch({ type: `HANDLE_MODAL`, payload: false });
   }, [dispatch]);
   return (
-    <div className={`mainapp-content_container`}>
+    <motion.div
+      className={`mainapp-content_container`}
+      variants={routesVariantDesktop}
+      animate='visible'
+      initial='hidden'
+      exit='exit'
+    >
       <section className='section1 settings-main'>
         <div className={`profile-main_nav profile-main_container ${border}`}>
           <BackButton />
@@ -88,7 +95,7 @@ const Settings = () => {
         </div>
         <div className={`settings-group`}>
           <h2 className={`settings-group_header`}>Background</h2>
-          <div className='settings-buttonTheme_container'>
+          <div className='settings-buttonTheme_container-theme'>
             {bgThemeItems.map(({ className, name }, index) => {
               let isActive = false;
               if (theme === name) isActive = true;
@@ -121,7 +128,7 @@ const Settings = () => {
       <section className={`section2 mainapp_home_container ${border}`}>
         <Socials className={`mainapp_home-socials`} />
       </section>
-    </div>
+    </motion.div>
   );
 };
 

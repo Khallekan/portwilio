@@ -28,11 +28,12 @@ const MobileNav = () => {
 
   return (
     <div className={`mobile-nav ${border} ${bgTheme}`}>
-      {items.map(({ name, ...rest }, index) => {
+      {items.map(({ name, to, ...rest }, index) => {
         return (
           <MobileNavItem
             key={index}
-            to={`/${name.toLowerCase()}`}
+            to={to}
+            exact={true}
             {...rest}
             className={`mobile-nav_item`}
             activeClassName={`mobile_nav_item-active`}

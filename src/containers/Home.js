@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Routes, Route } from "react-router-dom";
 import Socials from "../components/Socials";
 import Button from "../components/Button";
 import useWindowDimensions, { useThemeBorder } from "../utils/hooks";
 import { useGlobalContext } from "../context";
+import { routesVariantDesktop } from "../utils/variants";
+
 const Home = () => {
   let profileImage = `https://res.cloudinary.com/duziwvlis/image/upload/v1637014374/IMG-20210403-WA0090_eeimaw.jpg`;
   let { width } = useWindowDimensions();
@@ -16,7 +17,13 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <motion.div className={`mainapp-content_container`}>
+    <motion.div
+      className={`mainapp-content_container`}
+      variants={routesVariantDesktop}
+      animate='visible'
+      initial='hidden'
+      exit='exit'
+    >
       <motion.section className={`section1 mainapp_home`}>
         <motion.header className={`mainapp_home_container mainapp_home-header`}>
           <motion.div className={`mainapp_home-header_img`}>
@@ -62,12 +69,7 @@ const Home = () => {
         </motion.div>
       </motion.section>
       <motion.section className={`section2 mainapp_home_container ${border}`}>
-        <Routes>
-          <Route
-            index
-            element={<Socials className={`mainapp_home-socials`} />}
-          />
-        </Routes>
+        <Socials className={`mainapp_home-socials`} />
       </motion.section>
     </motion.div>
   );

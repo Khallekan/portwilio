@@ -1,6 +1,7 @@
 // RiHome7Fill,
 // RiHome7Line,
 import { RiSettings5Fill, RiSettings5Line } from "react-icons/ri";
+import { AiFillHtml5 } from "react-icons/ai";
 import {
   BsFillPersonFill,
   BsPerson,
@@ -17,7 +18,10 @@ import {
   HiPuzzle,
   HiOutlinePuzzle,
 } from "react-icons/hi";
+import { DiCss3, DiSass } from "react-icons/di";
 import { IoMailSharp } from "react-icons/io5";
+import { FaReact } from "react-icons/fa";
+import { SiTailwindcss, SiBootstrap, SiJavascript } from "react-icons/si";
 import Main from "../containers/Main";
 import Home from "../containers/Home";
 import Projects from "../containers/Projects";
@@ -27,32 +31,45 @@ import ProfileSkills from "../components/ProfileSkills";
 import ProfileExperience from "../components/ProfileExperience";
 
 const items = [
-  { name: `Profile`, icon: <BsPerson />, activeIcon: <BsFillPersonFill /> },
-  { name: `Projects`, icon: <HiOutlineHashtag />, activeIcon: <HiHashtag /> },
+  {
+    name: `Profile`,
+    icon: <BsPerson />,
+    activeIcon: <BsFillPersonFill />,
+    to: "profile",
+  },
+  {
+    name: `Projects`,
+    icon: <HiOutlineHashtag />,
+    activeIcon: <HiHashtag />,
+    to: "projects",
+  },
   {
     name: `Settings`,
     icon: <RiSettings5Line />,
     activeIcon: <RiSettings5Fill />,
+    to: "settings",
   },
 ];
 
 const routes = [
   {
-    path: "/",
-    element: <Main />,
+    path: `/`,
+    element: <Main key='main' />,
     children: [
-      { index: true, element: <Home /> },
-      { path: "/home/*", element: <Home /> },
+      { path: "/", element: <Home key='home' /> },
       {
-        path: `/profile/*`,
-        element: <Profile />,
+        path: `profile/*`,
+        element: <Profile key='profile' />,
         children: [
-          { index: true, element: <ProfileSkills /> },
-          { path: `experience`, element: <ProfileExperience /> },
+          { path: "", element: <ProfileSkills key='profileskills' /> },
+          {
+            path: `experience`,
+            element: <ProfileExperience key='profileexperience' />,
+          },
         ],
       },
-      { path: `/projects`, element: <Projects /> },
-      { path: `/settings`, element: <Settings /> },
+      { path: `projects`, element: <Projects key='projects' /> },
+      { path: `settings`, element: <Settings key='settings' /> },
     ],
   },
 ];
@@ -151,6 +168,56 @@ const projects = [
     tech: [`HTML`, `SCSS`, `JavaScript`],
   },
 ];
+const skills = [
+  {
+    name: `HTML`,
+    icon: <AiFillHtml5 />,
+    classNameLogo: `skill-logo `,
+    className: `skills-item_container html-logo`,
+  },
+  {
+    name: `CSS`,
+    icon: <DiCss3 />,
+    classNameLogo: `skill-logo `,
+    className: `skills-item_container css-logo`,
+  },
+  {
+    name: `JavaScript`,
+    icon: <SiJavascript />,
+    classNameLogo: `skill-logo `,
+    className: `skills-item_container js-logo`,
+  },
+  {
+    name: `SCSS`,
+    icon: <DiSass />,
+    classNameLogo: `skill-logo `,
+    className: `skills-item_container scss-logo`,
+  },
+  {
+    name: `React`,
+    icon: <FaReact />,
+    classNameLogo: `skill-logo `,
+    className: `skills-item_container react-logo `,
+  },
+  {
+    name: `Tailwind`,
+    icon: <SiTailwindcss />,
+    classNameLogo: `skill-logo `,
+    className: `skills-item_container tailwind-logo`,
+  },
+  {
+    name: "Git",
+    icon: <BsGithub />,
+    classNameLogo: `skill-logo `,
+    className: `skills-item_container`,
+  },
+  {
+    name: `Bootstrap`,
+    icon: <SiBootstrap />,
+    classNameLogo: `skill-logo `,
+    className: `skills-item_container bootstrap-logo`,
+  },
+];
 
 const experience = [
   {
@@ -213,4 +280,5 @@ export {
   projects,
   experience,
   settingsItems,
+  skills,
 };

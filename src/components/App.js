@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRoutes } from "react-router-dom";
 import { useGlobalContext } from "../context";
+import { motion, AnimatePresence } from "framer-motion";
 import Onboarding from "../containers/Onboarding";
 import { routes } from "../utils/sidebar";
 import "../styles/App.css";
@@ -37,13 +38,15 @@ const App = () => {
   }, [theme]);
 
   return (
-    <div className={`app-wrapper ${bgTheme}`}>
-      {first || second || third ? (
-        <Onboarding setText={setText} text={text} />
-      ) : (
-        element
-      )}
-    </div>
+    <motion.div className={`app-wrapper ${bgTheme}`}>
+      <AnimatePresence exitBeforeEnter>
+        {first || second || third ? (
+          <Onboarding setText={setText} text={text} />
+        ) : (
+          element
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 
