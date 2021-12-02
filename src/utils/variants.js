@@ -23,7 +23,7 @@ const routesVariantDesktop = {
     },
   },
   exit: {
-    y: 100,
+    y: "-100vw",
   },
 };
 

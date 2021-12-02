@@ -3,7 +3,7 @@
   @apply fixed bottom-0;
   @apply flex flex-row flex-nowrap items-center justify-between;
   @apply border-t;
-  @apply p-4;
+  @apply p-4 py-1;
   @apply z-20;
 }
 

@@ -1,6 +1,10 @@
 // RiHome7Fill,
 // RiHome7Line,
-import { RiSettings5Fill, RiSettings5Line } from "react-icons/ri";
+import {
+  RiSettings5Fill,
+  RiSettings5Line,
+  RiFilePaper2Fill,
+} from "react-icons/ri";
 import { AiFillHtml5 } from "react-icons/ai";
 import {
   BsFillPersonFill,
@@ -54,22 +58,25 @@ const items = [
 const routes = [
   {
     path: `/`,
-    element: <Main key='main' />,
+    element: <Main />,
+    key: "main",
     children: [
-      { path: "/", element: <Home key='home' /> },
+      { path: "/", element: <Home />, key: "home" },
       {
         path: `profile/*`,
-        element: <Profile key='profile' />,
+        key: "profile",
+        element: <Profile />,
         children: [
-          { path: "", element: <ProfileSkills key='profileskills' /> },
+          { path: "", key: "profileskills", element: <ProfileSkills /> },
           {
             path: `experience`,
-            element: <ProfileExperience key='profileexperience' />,
+            key: "profileexperience",
+            element: <ProfileExperience />,
           },
         ],
       },
-      { path: `projects`, element: <Projects key='projects' /> },
-      { path: `settings`, element: <Settings key='settings' /> },
+      { path: `projects`, key: "projects", element: <Projects /> },
+      { path: `settings`, key: "settings", element: <Settings /> },
     ],
   },
 ];
@@ -108,6 +115,13 @@ const socialLinks = [
     classNames: `social-container linkedin`,
     element: <BsLinkedin />,
     url: `http://www.linkedin.com/in/oke-olalekan-100`,
+    isTooltipVisible: false,
+  },
+  {
+    app: "résumé",
+    classNames: `social-container resume`,
+    element: <RiFilePaper2Fill />,
+    url: `https://drive.google.com/file/d/1MYQckufybTTg5YAo1yiTn8QjMjXQ-Rj5/view?usp=sharing`,
     isTooltipVisible: false,
   },
 ];
