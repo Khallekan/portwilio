@@ -15,7 +15,6 @@
 .section1,
 .section2 {
   @apply h-full flex-shrink-0;
-  @apply overscroll-contain;
 }
 
 .section1 {
