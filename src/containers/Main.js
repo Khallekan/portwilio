@@ -30,7 +30,7 @@ const Main = () => {
 
   return (
     <motion.section
-      className={`mainapp`}
+      className={`${mobileDevice ? "mainapp-mobile" : "mainapp"} `}
       variants={mainAppVariant}
       exit='exit'
       animate='visible'

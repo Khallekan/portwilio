@@ -9,7 +9,7 @@ import { projects } from "../utils/sidebar";
 import { useThemeBorder } from "../utils/hooks";
 
 const Projects = () => {
-  const { dispatch, buttonTheme } = useGlobalContext();
+  const { dispatch, buttonTheme, mobileDevice } = useGlobalContext();
   const [divideTheme, setDivideTheme] = useState(``);
   const { border } = useThemeBorder();
 
@@ -41,7 +41,11 @@ const Projects = () => {
   }, [dispatch]);
   return (
     <motion.div
-      className={`mainapp-content_container`}
+      className={`${
+        mobileDevice
+          ? "mainapp-content_container-mobile"
+          : "mainapp-content_container"
+      }`}
       variants={routesVariantDesktop}
       animate='visible'
       initial='hidden'

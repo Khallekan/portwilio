@@ -9,7 +9,7 @@ import { routesVariantDesktop } from "../utils/variants";
 const Home = () => {
   let profileImage = `https://res.cloudinary.com/duziwvlis/image/upload/v1637014374/IMG-20210403-WA0090_eeimaw.jpg`;
   let { width } = useWindowDimensions();
-  const { dispatch } = useGlobalContext();
+  const { dispatch, mobileDevice } = useGlobalContext();
   const { border } = useThemeBorder();
 
   useEffect(() => {
@@ -18,7 +18,11 @@ const Home = () => {
 
   return (
     <motion.div
-      className={`mainapp-content_container`}
+      className={`${
+        mobileDevice
+          ? "mainapp-content_container-mobile"
+          : "mainapp-content_container"
+      }`}
       variants={routesVariantDesktop}
       animate='visible'
       initial='hidden'

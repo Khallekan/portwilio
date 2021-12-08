@@ -9,7 +9,7 @@ import { useThemeBorder } from "../utils/hooks";
 import { motion } from "framer-motion";
 import { routesVariantDesktop } from "../utils/variants";
 const Settings = () => {
-  const { dispatch, buttonTheme, theme } = useGlobalContext();
+  const { dispatch, buttonTheme, theme, mobileDevice } = useGlobalContext();
   const [borderColor, setBorderColor] = useState({ border: ``, text: `` });
   const { border } = useThemeBorder();
 
@@ -59,7 +59,11 @@ const Settings = () => {
   }, [dispatch]);
   return (
     <motion.div
-      className={`mainapp-content_container`}
+      className={`${
+        mobileDevice
+          ? "mainapp-content_container-mobile"
+          : "mainapp-content_container"
+      }`}
       variants={routesVariantDesktop}
       animate='visible'
       initial='hidden'

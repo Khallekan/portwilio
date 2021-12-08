@@ -1,5 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
 import { useGlobalContext } from "../context";
+import { useLocation } from "react-router";
+import { routes } from "./sidebar";
+
+// GET WINDOW DIMENSIONS
 
 const getWindowsDimensions = () => {
   const { innerWidth: width, innerHeight: height } = window;
@@ -19,6 +23,8 @@ const useWindowDimensions = () => {
   }, []);
   return windowDimesions;
 };
+
+// CHANGE BORDER WITH THEME
 
 const useThemeBorder = () => {
   const [border, setBorder] = useState(``);
@@ -43,6 +49,26 @@ const useThemeBorder = () => {
   return { border };
 };
 
-export { useThemeBorder };
+const useAnimatedRoutes = () => {
+  const [animatedRoutes, setAnimatedRoutes] = useState(routes);
+  const location = useLocation();
+
+  useEffect(() => {
+    setAnimatedRoutes((oldRoutes) => {
+      let newRoutes = oldRoutes.map((route) => {
+        return {
+          ...route,
+          location: location.pathname,
+          key: location.pathname,
+        };
+      });
+      return newRoutes;
+    });
+  }, [location]);
+
+  return animatedRoutes;
+};
+
+export { useThemeBorder, useAnimatedRoutes };
 
 export default useWindowDimensions;

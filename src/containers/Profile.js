@@ -7,14 +7,18 @@ import { useThemeBorder } from "../utils/hooks";
 import { routesVariantDesktop } from "../utils/variants";
 
 const Profile = () => {
-  const { dispatch } = useGlobalContext();
+  const { dispatch, mobileDevice } = useGlobalContext();
   const { border } = useThemeBorder();
   useEffect(() => {
     dispatch({ type: `HANDLE_MODAL`, payload: false });
   }, [dispatch]);
   return (
     <motion.div
-      className={`mainapp-content_container`}
+      className={`${
+        mobileDevice
+          ? "mainapp-content_container-mobile"
+          : "mainapp-content_container"
+      }`}
       variants={routesVariantDesktop}
       animate='visible'
       initial='hidden'

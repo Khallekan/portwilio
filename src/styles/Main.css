@@ -1,10 +1,21 @@
 /* MAIN APP GENERAL STYLING */
 .mainapp {
   @apply w-full h-screen 2xl:max-w-screen-xl;
-  @apply flex flex-row flex-nowrap;
+  @apply flex flex-row md:flex-row flex-nowrap;
   @apply relative;
 }
 
+.mainapp-mobile {
+  @apply h-screen w-full;
+  @apply grid;
+  grid-template-rows: 1fr auto;
+  @apply relative;
+}
+.mainapp-content_container-mobile {
+  @apply w-full;
+  @apply row-start-1 row-end-2;
+  @apply overflow-y-scroll;
+}
 .mainapp-content_container {
   @apply w-full;
   @apply flex flex-row flex-nowrap;
