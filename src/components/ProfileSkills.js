@@ -11,13 +11,13 @@ const ProfileSkills = () => {
     <motion.div
       className={`skills-container`}
       variants={routesVariantDesktop}
-      animate='visible'
-      initial='hidden'
-      exit='exit'
+      animate="visible"
+      initial="hidden"
+      exit="exit"
     >
       {skills.map(({ className, classNameLogo, name, icon }, index) => {
         let newClassName = className;
-        if (name === `Git`) {
+        if (["Git", "NextJs"].includes(name)) {
           switch (theme) {
             case `LIGHT`:
               newClassName = `${className} git-skill-light`;

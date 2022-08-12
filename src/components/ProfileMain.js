@@ -72,9 +72,8 @@ const ProfileMain = () => {
               </span>
             </p>
             <p className={`profile-main-content_header-info_desc`}>
-              A Biochemist by formal education. An aspiring fullstack developer
-              with current focus on the frontend aspect. I am open to in-person
-              or remote internships or jobs.
+              A Biochemist by formal education. A full stack developer by
+              passion. I am open to new remote opportunities.
             </p>
             <p className={`profile-main-content_header-info_location`}>
               <MdLocationPin /> Lagos, Nigeria

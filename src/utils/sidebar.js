@@ -25,7 +25,17 @@ import {
 import { DiCss3, DiSass } from "react-icons/di";
 import { IoMailSharp } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
-import { SiTailwindcss, SiBootstrap, SiJavascript } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiBootstrap,
+  SiJavascript,
+  SiTypescript,
+  SiNextdotjs,
+  SiRedux,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+} from "react-icons/si";
 import Main from "../containers/Main";
 import Home from "../containers/Home";
 import Projects from "../containers/Projects";
@@ -121,7 +131,7 @@ const socialLinks = [
     app: "résumé",
     classNames: `social-container resume`,
     element: <RiFilePaper2Fill />,
-    url: `https://drive.google.com/file/d/1MYQckufybTTg5YAo1yiTn8QjMjXQ-Rj5/view?usp=sharing`,
+    url: `https://drive.google.com/file/d/1m2QgaxYZIZljCRzVzd7izusSH4rM-sfo/view?usp=sharing`,
     isTooltipVisible: false,
   },
 ];
@@ -230,6 +240,42 @@ const skills = [
     icon: <SiBootstrap />,
     classNameLogo: `skill-logo `,
     className: `skills-item_container bootstrap-logo`,
+  },
+  {
+    name: "NextJs",
+    icon: <SiNextdotjs />,
+    classNameLogo: `skill-logo`,
+    className: `skills-item_container`,
+  },
+  {
+    name: "Typescript",
+    icon: <SiTypescript />,
+    classNameLogo: "skill-logo",
+    className: `skills-item_container ts-logo`,
+  },
+  {
+    name: "Redux",
+    icon: <SiRedux />,
+    classNameLogo: "skill-logo",
+    className: `skills-item_container redux-logo`,
+  },
+  {
+    name: "NodeJs",
+    icon: <SiNodedotjs />,
+    classNameLogo: "skill-logo",
+    className: `skills-item_container node-logo`,
+  },
+  {
+    name: "Express",
+    icon: <SiExpress />,
+    classNameLogo: "skill-logo",
+    className: `skills-item_container express-logo`,
+  },
+  {
+    name: "MongoDB",
+    icon: <SiMongodb />,
+    classNameLogo: "skill-logo",
+    className: `skills-item_container mongo-logo`,
   },
 ];
 

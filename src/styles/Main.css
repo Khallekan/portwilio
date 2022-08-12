@@ -325,6 +325,25 @@
 .bootstrap-logo {
   @apply bg-bootstrap;
 }
+.redux-logo {
+  @apply bg-redux-color;
+}
+
+.ts-logo {
+  @apply bg-ts-color;
+}
+
+.node-logo {
+  @apply bg-node-color;
+}
+
+.express-logo {
+  @apply bg-node-color;
+}
+
+.mongo-logo {
+  @apply bg-mongo-db;
+}
 
 .git-skill-light {
   @apply bg-black text-white;
