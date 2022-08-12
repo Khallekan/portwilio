@@ -47,14 +47,13 @@ const Home = () => {
         </motion.header>
         <motion.div className={`mainapp_home_container`}>
           <motion.p className={`mainapp_home_desc`}>
-            I am a self taught, enthusiastic frontend developer with close to
+            I am a self taught, enthusiastic fullstack engineer with close to
             two (2) year's worth of experience building scalable and
             user-friendly web applications using various technologies. I have
             experience working on open source projects and can work in a group
             comfortably. <br />I am a firm beliver in the mobile first approach
             to web development. I am a quick learner and I am always willing to
-            learn new technologies to further my knowledge. <br />I am currently
-            seeking job or internship opportunities and hope{" "}
+            learn new technologies to further my knowledge. <br />
             <strong>
               <i>YOU</i>
             </strong>{" "}
