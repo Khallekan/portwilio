@@ -6,14 +6,15 @@
 }
 
 .mainapp-mobile {
-  @apply h-screen w-full;
+  @apply h-full max-h-screen w-full;
   @apply grid;
   grid-template-rows: 1fr auto;
+  grid-template-columns: 100%;
   @apply relative;
 }
 .mainapp-content_container-mobile {
-  @apply w-full;
-  @apply row-start-1 row-end-2;
+  @apply w-full h-full overflow-hidden relative;
+  @apply col-span-1 col-start-1 row-span-1 row-start-1 grid grid-cols-1;
   @apply overflow-y-scroll;
 }
 .mainapp-content_container {
@@ -341,8 +342,16 @@
   @apply bg-node-color;
 }
 
+.nest-logo {
+  @apply bg-nest-color;
+}
+
 .mongo-logo {
   @apply bg-mongo-db;
+}
+
+.postgres-logo {
+  @apply bg-postgres-color;
 }
 
 .git-skill-light {

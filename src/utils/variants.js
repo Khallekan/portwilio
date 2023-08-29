@@ -15,7 +15,7 @@ const mainAppVariant = {
 };
 
 const routesVariantDesktop = {
-  hidden: { x: "-100vw" },
+  hidden: { x: 0 },
   visible: {
     x: 0,
     transition: {

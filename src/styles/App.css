@@ -1,8 +1,14 @@
+html,
+body,
+#root {
+  @apply h-full w-full;
+}
+
 .app-wrapper {
-  @apply w-screen h-screen;
+  @apply w-full max-h-screen overflow-hidden h-full;
   @apply overflow-hidden;
   @apply font-roboto;
-  @apply flex items-center justify-center;
+  /* @apply flex items-center justify-center; */
 }
 
 .lightTheme {

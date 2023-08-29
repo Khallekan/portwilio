@@ -48,7 +48,7 @@ const Home = () => {
         <motion.div className={`mainapp_home_container`}>
           <motion.p className={`mainapp_home_desc`}>
             I am a self taught, enthusiastic fullstack engineer with close to
-            two (2) year's worth of experience building scalable and
+            two (3) year's worth of experience building scalable and
             user-friendly web applications using various technologies. I have
             experience working on open source projects and can work in a group
             comfortably. <br />I am a firm beliver in the mobile first approach

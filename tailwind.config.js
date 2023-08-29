@@ -40,6 +40,8 @@ module.exports = {
         "node-color": `#76B060`,
         "express-js": `#EEEEEE`,
         "mongo-db": `#033431`,
+        "nest-color": "#E0234E",
+        "postgres-color": "#31648C",
       },
     },
   },

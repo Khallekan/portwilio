@@ -30,17 +30,20 @@ const Main = () => {
 
   return (
     <motion.section
-      className={`${mobileDevice ? "mainapp-mobile" : "mainapp"} `}
+      className={`${mobileDevice ? "mainapp-mobile" : "mainapp"}`}
       variants={mainAppVariant}
-      exit='exit'
-      animate='visible'
-      initial='hidden'
+      exit="exit"
+      animate="visible"
+      initial="hidden"
     >
       {isContactModalOpen && <ContactModal />}
       {mobileDevice ? <MobileNav /> : <Sidebar />}
-      <AnimatePresence exitBeforeEnter>
-        <Outlet />
-      </AnimatePresence>
+      {/* <div className="row-start-2">something</div> */}
+      <div className="w-full h-full overflow-hidden">
+        <AnimatePresence exitBeforeEnter>
+          <Outlet />
+        </AnimatePresence>
+      </div>
     </motion.section>
   );
 };
