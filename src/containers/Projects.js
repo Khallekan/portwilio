@@ -47,11 +47,11 @@ const Projects = () => {
           : "mainapp-content_container"
       }`}
       variants={routesVariantDesktop}
-      animate='visible'
-      initial='hidden'
-      exit='exit'
+      animate="visible"
+      initial="hidden"
+      exit="exit"
     >
-      <section className={`section1 project-container`}>
+      <section className={`section1 no-scrollbar project-container`}>
         <div className={`profile-main_nav profile-main_container ${border}`}>
           <BackButton />
           <div className={`profile-main_nav-text`}>

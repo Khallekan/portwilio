@@ -28,7 +28,7 @@ const Home = () => {
       initial='hidden'
       exit='exit'
     >
-      <motion.section className={`section1 mainapp_home`}>
+      <motion.section className={`section1 no-scrollbar mainapp_home`}>
         <motion.header className={`mainapp_home_container mainapp_home-header`}>
           <motion.div className={`mainapp_home-header_img`}>
             <motion.img src={profileImage} alt={`Lekan Isaac`} />
@@ -48,7 +48,7 @@ const Home = () => {
         <motion.div className={`mainapp_home_container`}>
           <motion.p className={`mainapp_home_desc`}>
             I am a self taught, enthusiastic fullstack engineer with close to
-            two (3) year's worth of experience building scalable and
+            three (3) year's worth of experience building scalable and
             user-friendly web applications using various technologies. I have
             experience working on open source projects and can work in a group
             comfortably. <br />I am a firm beliver in the mobile first approach
