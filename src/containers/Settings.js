@@ -65,11 +65,11 @@ const Settings = () => {
           : "mainapp-content_container"
       }`}
       variants={routesVariantDesktop}
-      animate='visible'
-      initial='hidden'
-      exit='exit'
+      animate="visible"
+      initial="hidden"
+      exit="exit"
     >
-      <section className='section1 settings-main'>
+      <section className="section1 no-scrollbar settings-main">
         <div className={`profile-main_nav profile-main_container ${border}`}>
           <BackButton />
           <div className={`profile-main_nav-text`}>
@@ -99,7 +99,7 @@ const Settings = () => {
         </div>
         <div className={`settings-group`}>
           <h2 className={`settings-group_header`}>Background</h2>
-          <div className='settings-buttonTheme_container-theme'>
+          <div className="settings-buttonTheme_container-theme">
             {bgThemeItems.map(({ className, name }, index) => {
               let isActive = false;
               if (theme === name) isActive = true;

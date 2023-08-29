@@ -6,7 +6,7 @@ body,
 
 .app-wrapper {
   @apply w-full max-h-screen overflow-hidden h-full;
-  @apply overflow-hidden;
+  /* @apply overflow-hidden; */
   @apply font-roboto;
   /* @apply flex items-center justify-center; */
 }
@@ -21,4 +21,14 @@ body,
 
 .darkTheme {
   @apply bg-black text-white;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit-based browsers */
+}
+
+.no-scrollbar {
+  overflow: -moz-scrollbars-none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for Edge and IE */
+  scrollbar-width: none; /* Hide scrollbar for non-WebKit-based browsers */
 }

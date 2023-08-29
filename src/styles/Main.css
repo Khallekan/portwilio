@@ -1,8 +1,10 @@
 /* MAIN APP GENERAL STYLING */
 .mainapp {
-  @apply w-full h-screen 2xl:max-w-screen-xl;
+  @apply w-full h-full 2xl:max-w-screen-xl;
   @apply flex flex-row md:flex-row flex-nowrap;
   @apply relative;
+  @apply overflow-hidden
+  /* @apply overflow-y-auto overflow-x-hidden;  */;
 }
 
 .mainapp-mobile {
@@ -18,7 +20,7 @@
   @apply overflow-y-scroll;
 }
 .mainapp-content_container {
-  @apply w-full;
+  @apply w-full h-full;
   @apply flex flex-row flex-nowrap;
   @apply overflow-y-scroll;
   @apply relative;
@@ -30,7 +32,7 @@
 }
 
 .section1 {
-  @apply w-full md:w-10/12 lg:w-8/12;
+  @apply w-full h-full overflow-x-hidden overflow-y-auto md:w-10/12 lg:w-8/12;
 }
 .section2 {
   @apply hidden md:block;

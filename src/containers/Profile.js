@@ -20,11 +20,11 @@ const Profile = () => {
           : "mainapp-content_container"
       }`}
       variants={routesVariantDesktop}
-      animate='visible'
-      initial='hidden'
-      exit='exit'
+      animate="visible"
+      initial="hidden"
+      exit="exit"
     >
-      <section className='section1'>
+      <section className="section1 no-scrollbar">
         <ProfileMain />
       </section>
       <section className={`section2 mainapp_home_container ${border}`}>
