@@ -13,7 +13,7 @@ const ProfileExperience = () => {
       initial='hidden'
       exit='exit'
     >
-      {experience.map(
+      {experience.reverse().map(
         ({ organization, position, duration, activities }, index) => {
           return (
             <section

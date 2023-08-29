@@ -35,6 +35,8 @@ import {
   SiNodedotjs,
   SiExpress,
   SiMongodb,
+  SiNestjs,
+  SiPostgresql,
 } from "react-icons/si";
 import Main from "../containers/Main";
 import Home from "../containers/Home";
@@ -131,7 +133,7 @@ const socialLinks = [
     app: "résumé",
     classNames: `social-container resume`,
     element: <RiFilePaper2Fill />,
-    url: `https://drive.google.com/file/d/1m2QgaxYZIZljCRzVzd7izusSH4rM-sfo/view?usp=sharing`,
+    url: `https://drive.google.com/file/d/1sP8EOVvv1ab2iAHTI3wAAk8irCumoHxA/view?usp=sharing`,
     isTooltipVisible: false,
   },
 ];
@@ -272,10 +274,22 @@ const skills = [
     className: `skills-item_container express-logo`,
   },
   {
+    name: "NestJs",
+    icon: <SiNestjs />,
+    classNameLogo: "skill-logo",
+    className: "skills-item_container nest-logo",
+  },
+  {
     name: "MongoDB",
     icon: <SiMongodb />,
     classNameLogo: "skill-logo",
     className: `skills-item_container mongo-logo`,
+  },
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql />,
+    classNameLogo: "skill-logo",
+    className: "skills-item_container postgres-logo",
   },
 ];
 
@@ -312,6 +326,43 @@ const experience = [
     activities: [
       `Implemented websites, frontend applications and landing pages from concept using React.js, SCSS, bootstrap.`,
       `Collaborated with various developers and designers to build and deploy responsive and interactive websites with a mobile first approach.`,
+    ],
+  },
+  {
+    organization: "Maxisdraw",
+    position: "Frontend Engineer - [Contract]",
+    duration: "January 2022 - February 2022",
+    activities: [
+      "Built a minimum viable product for a bet company.",
+      "Led the frontend team to implemented a fully responsive interface from concept.",
+      "Handled state management with Redux and Hooks.",
+    ],
+  },
+  {
+    organization: "Zerotech Agency",
+    position: "Fullstack engineer - [Contract]",
+    duration: "September 2022 - March 2023",
+    activities: [
+      "Handle deployments of frontend and backend services on a cPanel server.",
+      "Migrated frontend and backend codebases from vanilla JavaScript to Typescript.",
+      "Built MVP for a social media application",
+      "Implemented fully responsive interfaces from concept.",
+      "Built and maintain internal tools.",
+      "Handled documentation of code and on-boarded new developers into the team.",
+    ],
+  },
+  {
+    organization: "Thrindle Services Limited",
+    position: "Fullstack engineer",
+    duration: "January 2022 - Present",
+    activities: [
+      "Built a fully functional e-commerce platform.",
+      "Maintained a well structured codebase and used Typescript to improve predictability.",
+      "Migrated applications from React to Next to improve SEO.",
+      "Cut down load time of requests on the backend to further improve user experience.",
+      "Built and maintain internal tools.",
+      "Integrated third party APIs to handle payment and logistics.",
+      "Built and maintained application for Point of Sale agents.",
     ],
   },
 ];
