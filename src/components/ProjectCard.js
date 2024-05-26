@@ -46,28 +46,30 @@ const ProjectCard = (project) => {
   }, [theme, handleHoverTheme]);
 
   return (
-    <div className='project-card'>
-      <a href={project.link} target='_blank' rel='noopenener noreferrer'>
+    <div className="project-card">
+      <a href={project.link} target="_blank" rel="noopenener noreferrer">
         <img src={project.img} alt={project.title} className={``} />
       </a>
-      <div className='project-card_info'>
-        <h3 className='project-card_title'>{project.title}</h3>
-        <p className='project-card_description'>{project.description}</p>
-        <div className='project-card_tech'>{project.tech.join(", ")}</div>
+      <div className="project-card_info">
+        <h3 className="project-card_title">{project.title}</h3>
+        <p className="project-card_description">{project.description}</p>
+        <div className="project-card_tech">{project.tech.join(", ")}</div>
 
-        <div className='project-card_links'>
-          <a
-            href={project.github}
-            target='_blank'
-            rel='noopener noreferrer'
-            className={`${colorTheme} ${hoverTheme} project-card_link`}
-          >
-            Github
-          </a>
+        <div className="project-card_links">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${colorTheme} ${hoverTheme} project-card_link`}
+            >
+              Github
+            </a>
+          )}
           <a
             href={project.link}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
             className={`${colorTheme} ${hoverTheme} project-card_link`}
           >
             Visit
