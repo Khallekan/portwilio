@@ -133,7 +133,7 @@ const socialLinks = [
     app: "résumé",
     classNames: `social-container resume`,
     element: <RiFilePaper2Fill />,
-    url: `https://drive.google.com/file/d/1sP8EOVvv1ab2iAHTI3wAAk8irCumoHxA/view?usp=sharing`,
+    url: `https://drive.google.com/file/d/1kKSuRJrPcQjHk7BBmBHCq000sqAOqAUU/view?usp=sharing`,
     isTooltipVisible: false,
   },
 ];
@@ -153,6 +153,20 @@ const profileNav = [
 ];
 
 const projects = [
+  {
+    img: `https://res.cloudinary.com/duziwvlis/image/upload/v1716715572/Screenshot_2024-05-26_at_10.25.15_teqtvf.png`,
+    title: `Product Studio HQ`,
+    description: `Building real products for businesses from start to finish.`,
+    link: `https://theproductstudiohq.com`,
+    tech: [`Nextjs`, `Tailwind`, `Typescript`, "Lenis"],
+  },
+  {
+    img: `https://res.cloudinary.com/duziwvlis/image/upload/v1716715576/Screenshot_2024-05-26_at_10.24.57_t2d6bq.png`,
+    title: `Thrindle Business`,
+    description: `Automate your business purchase system`,
+    link: `https://thrindlebusiness.com`,
+    tech: [`Nextjs`, `Tailwind`, `Typescript`, "Puppeteer"],
+  },
   {
     img: `https://res.cloudinary.com/duziwvlis/image/upload/v1638032291/Screenshot_2021-11-27_175414_kjsoyf.jpg`,
     title: `Country Finder`,
